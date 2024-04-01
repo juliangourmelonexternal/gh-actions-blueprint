@@ -1,0 +1,13 @@
+dbt_project:
+  outputs:
+    dev:
+      type: snowflake
+      account: ARETOCONSULTING.eu-central-1
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: JULIANISTDERBESTE
+      database: DBT_Julian_ist_der_Beste
+      warehouse: ARETO_TRIAL_XS
+      schema: TEST_SCHEMA_2
+      threads: 2
+  target: dev

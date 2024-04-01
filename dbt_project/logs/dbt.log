@@ -1,0 +1,1842 @@
+[0m14:19:37.178142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B434AD850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B43237F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B434AD3D0>]}
+
+
+============================== 14:19:37.178142 | c24fdc10-0dab-42e7-927f-0b6cc31fe188 ==============================
+[0m14:19:37.178142 [info ] [MainThread]: Running with dbt=1.7.11
+[0m14:19:37.178142 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\JulianGourmelon-aret\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\JulianGourmelon-aret\\OneDrive - areto consulting gmbh\\Dokumente\\dbt_full_pipeline\\dbt_project\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:19:37.249745 [info ] [MainThread]: dbt version: 1.7.11
+[0m14:19:37.257364 [info ] [MainThread]: python version: 3.12.2
+[0m14:19:37.257364 [info ] [MainThread]: python path: C:\Users\JulianGourmelon-aret\OneDrive - areto consulting gmbh\Dokumente\dbt_full_pipeline\dbt_env\Scripts\python.exe
+[0m14:19:37.257364 [info ] [MainThread]: os info: Windows-11-10.0.22631-SP0
+[0m14:19:38.002974 [info ] [MainThread]: Using profiles dir at C:\Users\JulianGourmelon-aret\.dbt
+[0m14:19:38.002974 [info ] [MainThread]: Using profiles.yml file at C:\Users\JulianGourmelon-aret\.dbt\profiles.yml
+[0m14:19:38.002974 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\JulianGourmelon-aret\OneDrive - areto consulting gmbh\Dokumente\dbt_full_pipeline\dbt_project\dbt_project.yml
+[0m14:19:38.002974 [info ] [MainThread]: adapter type: snowflake
+[0m14:19:38.002974 [info ] [MainThread]: adapter version: 1.7.3
+[0m14:19:38.167987 [info ] [MainThread]: Configuration:
+[0m14:19:38.173108 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:19:38.175261 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m14:19:38.183738 [info ] [MainThread]: Required dependencies:
+[0m14:19:38.187252 [debug] [MainThread]: Executing "git --help"
+[0m14:19:38.271403 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:19:38.271403 [debug] [MainThread]: STDERR: "b''"
+[0m14:19:38.271403 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:19:38.278258 [info ] [MainThread]: Connection:
+[0m14:19:38.279774 [info ] [MainThread]:   account: ARETOCONSULTING.eu-central-1
+[0m14:19:38.284077 [info ] [MainThread]:   user: julian.gourmelon@areto.de
+[0m14:19:38.286251 [info ] [MainThread]:   database: DBT_Julian_ist_der_Beste
+[0m14:19:38.287512 [info ] [MainThread]:   warehouse: ARETO_TRIAL_XS
+[0m14:19:38.287512 [info ] [MainThread]:   role: SYSADMIN
+[0m14:19:38.287512 [info ] [MainThread]:   schema: TEST_SCHEMA_2
+[0m14:19:38.287512 [info ] [MainThread]:   authenticator: externalbrowser
+[0m14:19:38.287512 [info ] [MainThread]:   oauth_client_id: None
+[0m14:19:38.296680 [info ] [MainThread]:   query_tag: None
+[0m14:19:38.300028 [info ] [MainThread]:   client_session_keep_alive: False
+[0m14:19:38.301879 [info ] [MainThread]:   host: None
+[0m14:19:38.304382 [info ] [MainThread]:   port: None
+[0m14:19:38.308063 [info ] [MainThread]:   proxy_host: None
+[0m14:19:38.314851 [info ] [MainThread]:   proxy_port: None
+[0m14:19:38.317234 [info ] [MainThread]:   protocol: None
+[0m14:19:38.317234 [info ] [MainThread]:   connect_retries: 1
+[0m14:19:38.317234 [info ] [MainThread]:   connect_timeout: None
+[0m14:19:38.323818 [info ] [MainThread]:   retry_on_database_errors: False
+[0m14:19:38.327139 [info ] [MainThread]:   retry_all: False
+[0m14:19:38.327139 [info ] [MainThread]:   insecure_mode: False
+[0m14:19:38.332589 [info ] [MainThread]:   reuse_connections: None
+[0m14:19:38.334482 [info ] [MainThread]: Registered adapter: snowflake=1.7.3
+[0m14:19:38.334482 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m14:19:38.340484 [debug] [MainThread]: Using snowflake connection "debug"
+[0m14:19:38.341558 [debug] [MainThread]: On debug: select 1 as id
+[0m14:19:38.345517 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:20:00.130817 [debug] [MainThread]: SQL status: SUCCESS 1 in 22.0 seconds
+[0m14:20:00.130817 [debug] [MainThread]: On debug: Close
+[0m14:20:00.556664 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m14:20:00.556664 [info ] [MainThread]: [32mAll checks passed![0m
+[0m14:20:00.572152 [debug] [MainThread]: Command `dbt debug` succeeded at 14:20:00.572152 after 23.60 seconds
+[0m14:20:00.575523 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m14:20:00.577632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B43289100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B44127E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B442CC290>]}
+[0m14:20:00.577632 [debug] [MainThread]: Flushing usage events
+[0m10:24:42.441731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022839A068A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022838E839B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022839A06AE0>]}
+
+
+============================== 10:24:42.446899 | 1489b39f-416d-44eb-910e-9949b09da9a9 ==============================
+[0m10:24:42.446899 [info ] [MainThread]: Running with dbt=1.7.11
+[0m10:24:42.447906 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\JulianGourmelon-aret\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\JulianGourmelon-aret\\OneDrive - areto consulting gmbh\\Dokumente\\dbt_full_pipeline\\dbt_project\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt test', 'send_anonymous_usage_stats': 'True'}
+[0m10:24:42.907036 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1489b39f-416d-44eb-910e-9949b09da9a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022839A53500>]}
+[0m10:24:42.978252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1489b39f-416d-44eb-910e-9949b09da9a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002283A8C1AC0>]}
+[0m10:24:42.980252 [info ] [MainThread]: Registered adapter: snowflake=1.7.3
+[0m10:24:43.001216 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m10:24:43.002217 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:24:43.003706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1489b39f-416d-44eb-910e-9949b09da9a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002283A8C35C0>]}
+[0m10:24:45.244838 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1489b39f-416d-44eb-910e-9949b09da9a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002283AB27620>]}
+[0m10:24:45.275347 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1489b39f-416d-44eb-910e-9949b09da9a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002283A9EE4B0>]}
+[0m10:24:45.277342 [info ] [MainThread]: Found 5 models, 7 tests, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m10:24:45.277342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1489b39f-416d-44eb-910e-9949b09da9a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002283AA36ED0>]}
+[0m10:24:45.279347 [info ] [MainThread]:
+[0m10:24:45.281342 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:24:45.283349 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2'
+[0m10:24:45.298219 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"
+[0m10:24:45.299214 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "connection_name": "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"} */
+show terse objects in DBT_Julian_ist_der_Beste.TEST_SCHEMA_2 limit 10000
+[0m10:24:45.300216 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:24:51.543797 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01b37638-0202-9574-0000-041d03aa3182
+[0m10:24:51.544797 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m10:24:51.545971 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m10:24:51.546972 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m10:24:51.547977 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: Close
+[0m10:24:51.663960 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1489b39f-416d-44eb-910e-9949b09da9a9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002283A9ED370>]}
+[0m10:24:51.664964 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m10:24:51.667970 [info ] [MainThread]:
+[0m10:24:51.676332 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:24:51.678257 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:24:51.679251 [info ] [Thread-1 (]: 1 of 7 START test not_null_book_loans_book_id .................................. [RUN]
+[0m10:24:51.680251 [info ] [Thread-2 (]: 2 of 7 START test not_null_book_loans_borrow_date .............................. [RUN]
+[0m10:24:51.682261 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_book_id.cd147c3a10'
+[0m10:24:51.684250 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_borrow_date.60f6c76397'
+[0m10:24:51.684250 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:24:51.687498 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:24:51.702882 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:24:51.708885 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:24:51.713264 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (compile): 10:24:51.688499 => 10:24:51.712277
+[0m10:24:51.714259 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (compile): 10:24:51.703809 => 10:24:51.713264
+[0m10:24:51.714624 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:24:51.715632 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:24:51.737628 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:24:51.739725 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:24:51.744376 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:24:51.745338 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select borrow_date
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where borrow_date is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:24:51.746342 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:24:51.746342 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:24:51.747419 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select book_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:24:51.749338 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:24:52.515673 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b37638-0202-9574-0000-041d03aa3186
+[0m10:24:52.516673 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+[0m10:24:52.517662 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (execute): 10:24:51.738630 => 10:24:52.517662
+[0m10:24:52.518807 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: Close
+[0m10:24:52.612845 [debug] [Thread-2 (]: Database Error in test not_null_book_loans_borrow_date (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_borrow_date.sql
+[0m10:24:52.613846 [error] [Thread-2 (]: 2 of 7 ERROR not_null_book_loans_borrow_date ................................... [[31mERROR[0m in 0.93s]
+[0m10:24:52.616154 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:24:52.616154 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:24:52.618154 [info ] [Thread-2 (]: 3 of 7 START test not_null_book_loans_user_id .................................. [RUN]
+[0m10:24:52.620386 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_borrow_date.60f6c76397, now test.dbt_project.not_null_book_loans_user_id.ea74709787)
+[0m10:24:52.621393 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:24:52.628555 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:24:52.629608 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01b37638-0202-9656-0000-041d03aa246a
+[0m10:24:52.630513 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+[0m10:24:52.631654 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (execute): 10:24:51.716630 => 10:24:52.630513
+[0m10:24:52.632660 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (compile): 10:24:52.621393 => 10:24:52.631654
+[0m10:24:52.632660 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: Close
+[0m10:24:52.633663 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:24:52.643302 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:24:52.646546 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:24:52.647594 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_user_id.ea74709787"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select user_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where user_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:24:52.648142 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:24:52.723345 [debug] [Thread-1 (]: Database Error in test not_null_book_loans_book_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_book_id.sql
+[0m10:24:52.724305 [error] [Thread-1 (]: 1 of 7 ERROR not_null_book_loans_book_id ....................................... [[31mERROR[0m in 1.04s]
+[0m10:24:52.725265 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:24:52.725265 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:24:52.726752 [info ] [Thread-1 (]: 4 of 7 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m10:24:52.728761 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_book_id.cd147c3a10, now test.dbt_project.not_null_my_second_dbt_model_id.151b76d778)
+[0m10:24:52.728761 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:24:52.733760 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:24:52.735777 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (compile): 10:24:52.729760 => 10:24:52.735777
+[0m10:24:52.737204 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:24:52.740465 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:24:52.744984 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:24:52.746999 [debug] [Thread-1 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:24:52.748006 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:24:53.336179 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b37638-0202-9574-0000-041d03aa318a
+[0m10:24:53.337179 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+[0m10:24:53.338179 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (execute): 10:24:52.635660 => 10:24:53.337179
+[0m10:24:53.338179 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: Close
+[0m10:24:53.412807 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01b37638-0202-9580-0000-041d03aa404a
+[0m10:24:53.412807 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+[0m10:24:53.413878 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (execute): 10:24:52.737204 => 10:24:53.413785
+[0m10:24:53.413878 [debug] [Thread-1 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m10:24:53.430337 [debug] [Thread-2 (]: Database Error in test not_null_book_loans_user_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_user_id.sql
+[0m10:24:53.431400 [error] [Thread-2 (]: 3 of 7 ERROR not_null_book_loans_user_id ....................................... [[31mERROR[0m in 0.81s]
+[0m10:24:53.432338 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:24:53.433676 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:24:53.434689 [info ] [Thread-2 (]: 5 of 7 START test unique_book_loans_book_id .................................... [RUN]
+[0m10:24:53.435695 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_user_id.ea74709787, now test.dbt_project.unique_book_loans_book_id.2366c367e6)
+[0m10:24:53.436749 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:24:53.443948 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:24:53.446193 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (compile): 10:24:53.436749 => 10:24:53.444949
+[0m10:24:53.447197 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:24:53.452282 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:24:53.455225 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:24:53.456553 [debug] [Thread-2 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_book_loans_book_id.2366c367e6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    book_id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is not null
+group by book_id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:24:53.458100 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:24:53.505116 [debug] [Thread-1 (]: Database Error in test not_null_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_my_second_dbt_model_id.sql
+[0m10:24:53.506118 [error] [Thread-1 (]: 4 of 7 ERROR not_null_my_second_dbt_model_id ................................... [[31mERROR[0m in 0.78s]
+[0m10:24:53.507118 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:24:53.508118 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:24:53.509117 [info ] [Thread-1 (]: 6 of 7 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m10:24:53.511117 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_my_second_dbt_model_id.151b76d778, now test.dbt_project.unique_my_first_dbt_model_id.16e066b321)
+[0m10:24:53.512117 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:24:53.518159 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:24:53.520116 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (compile): 10:24:53.512117 => 10:24:53.520116
+[0m10:24:53.521118 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:24:53.525683 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:24:53.528614 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:24:53.530605 [debug] [Thread-1 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_first_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:24:53.530605 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:24:54.142802 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b37638-0202-9580-0000-041d03aa404e
+[0m10:24:54.144407 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+[0m10:24:54.145534 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (execute): 10:24:53.448189 => 10:24:54.145534
+[0m10:24:54.146685 [debug] [Thread-2 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: Close
+[0m10:24:54.236925 [debug] [Thread-2 (]: Database Error in test unique_book_loans_book_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_book_loans_book_id.sql
+[0m10:24:54.236925 [error] [Thread-2 (]: 5 of 7 ERROR unique_book_loans_book_id ......................................... [[31mERROR[0m in 0.80s]
+[0m10:24:54.239087 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:24:54.239087 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:24:54.240098 [info ] [Thread-2 (]: 7 of 7 START test unique_my_second_dbt_model_id ................................ [RUN]
+[0m10:24:54.241083 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_book_loans_book_id.2366c367e6, now test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493)
+[0m10:24:54.242086 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:24:54.246004 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:24:54.246004 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (compile): 10:24:54.243122 => 10:24:54.246004
+[0m10:24:54.246004 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:24:54.255486 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:24:54.258483 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:24:54.259483 [debug] [Thread-2 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:24:54.259483 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:24:54.277771 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01b37638-0202-9656-0000-041d03aa246e
+[0m10:24:54.278781 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+[0m10:24:54.279689 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (execute): 10:24:53.522588 => 10:24:54.279689
+[0m10:24:54.280762 [debug] [Thread-1 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: Close
+[0m10:24:54.364223 [debug] [Thread-1 (]: Database Error in test unique_my_first_dbt_model_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_first_dbt_model_id.sql
+[0m10:24:54.364223 [error] [Thread-1 (]: 6 of 7 ERROR unique_my_first_dbt_model_id ...................................... [[31mERROR[0m in 0.85s]
+[0m10:24:54.366225 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:24:54.858855 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b37638-0202-9578-0000-041d03aa0fce
+[0m10:24:54.858855 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+[0m10:24:54.860786 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (execute): 10:24:54.246004 => 10:24:54.860786
+[0m10:24:54.861868 [debug] [Thread-2 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: Close
+[0m10:24:55.251543 [debug] [Thread-2 (]: Database Error in test unique_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_second_dbt_model_id.sql
+[0m10:24:55.252539 [error] [Thread-2 (]: 7 of 7 ERROR unique_my_second_dbt_model_id ..................................... [[31mERROR[0m in 1.01s]
+[0m10:24:55.254541 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:24:55.257536 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:24:55.258535 [debug] [MainThread]: Connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2' was properly closed.
+[0m10:24:55.258535 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_first_dbt_model_id.16e066b321' was properly closed.
+[0m10:24:55.259535 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m10:24:55.260534 [info ] [MainThread]:
+[0m10:24:55.262534 [info ] [MainThread]: Finished running 7 tests in 0 hours 0 minutes and 9.98 seconds (9.98s).
+[0m10:24:55.265877 [debug] [MainThread]: Command end result
+[0m10:24:55.280635 [info ] [MainThread]:
+[0m10:24:55.281640 [info ] [MainThread]: [31mCompleted with 7 errors and 0 warnings:[0m
+[0m10:24:55.282635 [info ] [MainThread]:
+[0m10:24:55.283627 [error] [MainThread]:   Database Error in test not_null_book_loans_borrow_date (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_borrow_date.sql
+[0m10:24:55.284628 [info ] [MainThread]:
+[0m10:24:55.285676 [error] [MainThread]:   Database Error in test not_null_book_loans_book_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_book_id.sql
+[0m10:24:55.286629 [info ] [MainThread]:
+[0m10:24:55.287625 [error] [MainThread]:   Database Error in test not_null_book_loans_user_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_user_id.sql
+[0m10:24:55.288627 [info ] [MainThread]:
+[0m10:24:55.289627 [error] [MainThread]:   Database Error in test not_null_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_my_second_dbt_model_id.sql
+[0m10:24:55.292717 [info ] [MainThread]:
+[0m10:24:55.293628 [error] [MainThread]:   Database Error in test unique_book_loans_book_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_book_loans_book_id.sql
+[0m10:24:55.294626 [info ] [MainThread]:
+[0m10:24:55.295817 [error] [MainThread]:   Database Error in test unique_my_first_dbt_model_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_first_dbt_model_id.sql
+[0m10:24:55.295817 [info ] [MainThread]:
+[0m10:24:55.295817 [error] [MainThread]:   Database Error in test unique_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (02000): SQL compilation error:
+  Schema 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_second_dbt_model_id.sql
+[0m10:24:55.295817 [info ] [MainThread]:
+[0m10:24:55.299770 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=7 SKIP=0 TOTAL=7
+[0m10:24:55.301780 [debug] [MainThread]: Command `dbt test` failed at 10:24:55.301780 after 12.98 seconds
+[0m10:24:55.302775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228396F18E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000228398C5F40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002283AAB8D70>]}
+[0m10:24:55.303775 [debug] [MainThread]: Flushing usage events
+[0m10:43:02.961410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029001E72D80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029001E72E70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029001E72A80>]}
+
+
+============================== 10:43:02.965417 | aed7d03e-6abb-4ca1-b6bd-b2df3b1dc791 ==============================
+[0m10:43:02.965417 [info ] [MainThread]: Running with dbt=1.7.11
+[0m10:43:02.966525 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\JulianGourmelon-aret\\.dbt', 'log_path': 'C:\\Users\\JulianGourmelon-aret\\OneDrive - areto consulting gmbh\\Dokumente\\dbt_full_pipeline\\dbt_project\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt test', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:43:03.464045 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aed7d03e-6abb-4ca1-b6bd-b2df3b1dc791', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029001E9B740>]}
+[0m10:43:03.535902 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'aed7d03e-6abb-4ca1-b6bd-b2df3b1dc791', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029002B70680>]}
+[0m10:43:03.537850 [info ] [MainThread]: Registered adapter: snowflake=1.7.3
+[0m10:43:03.556765 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m10:43:04.768106 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:43:04.769103 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:43:04.776226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'aed7d03e-6abb-4ca1-b6bd-b2df3b1dc791', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029002D7B470>]}
+[0m10:43:04.809225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'aed7d03e-6abb-4ca1-b6bd-b2df3b1dc791', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029002DF8AD0>]}
+[0m10:43:04.811129 [info ] [MainThread]: Found 5 models, 7 tests, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m10:43:04.811638 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aed7d03e-6abb-4ca1-b6bd-b2df3b1dc791', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290028DFE30>]}
+[0m10:43:04.816647 [info ] [MainThread]:
+[0m10:43:04.817646 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:43:04.821154 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2'
+[0m10:43:04.834594 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"
+[0m10:43:04.835506 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "connection_name": "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"} */
+show terse objects in DBT_Julian_ist_der_Beste.TEST_SCHEMA_2 limit 10000
+[0m10:43:04.835506 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:43:05.559958 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.0 seconds
+[0m10:43:05.562530 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: Close
+[0m10:43:05.647639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'aed7d03e-6abb-4ca1-b6bd-b2df3b1dc791', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029001EC3E30>]}
+[0m10:43:05.647639 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m10:43:05.648718 [info ] [MainThread]:
+[0m10:43:05.654135 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:05.655208 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:05.656131 [info ] [Thread-1 (]: 1 of 7 START test not_null_book_loans_book_id .................................. [RUN]
+[0m10:43:05.656131 [info ] [Thread-2 (]: 2 of 7 START test not_null_book_loans_borrow_date .............................. [RUN]
+[0m10:43:05.658140 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_book_id.cd147c3a10'
+[0m10:43:05.659141 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_borrow_date.60f6c76397'
+[0m10:43:05.660133 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:05.661133 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:05.679210 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:43:05.685007 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:43:05.688930 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (compile): 10:43:05.661640 => 10:43:05.687925
+[0m10:43:05.691435 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:05.692446 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (compile): 10:43:05.681292 => 10:43:05.692446
+[0m10:43:05.713744 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:43:05.714948 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:05.719610 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:43:05.724037 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:43:05.725044 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select book_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:05.725998 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:43:05.726988 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:43:05.728992 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select borrow_date
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where borrow_date is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:05.730990 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:43:06.667126 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01b3764b-0202-95a1-0000-041d03aa1fe2
+[0m10:43:06.667126 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+[0m10:43:06.669117 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (execute): 10:43:05.693444 => 10:43:06.668113
+[0m10:43:06.670111 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b3764b-0202-9574-0000-041d03aa3356
+[0m10:43:06.670111 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: Close
+[0m10:43:06.671622 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+[0m10:43:06.673628 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (execute): 10:43:05.715603 => 10:43:06.673628
+[0m10:43:06.675667 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: Close
+[0m10:43:06.771901 [debug] [Thread-1 (]: Database Error in test not_null_book_loans_book_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_book_id.sql
+[0m10:43:06.773952 [debug] [Thread-2 (]: Database Error in test not_null_book_loans_borrow_date (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_borrow_date.sql
+[0m10:43:06.774899 [error] [Thread-1 (]: 1 of 7 ERROR not_null_book_loans_book_id ....................................... [[31mERROR[0m in 1.12s]
+[0m10:43:06.775913 [error] [Thread-2 (]: 2 of 7 ERROR not_null_book_loans_borrow_date ................................... [[31mERROR[0m in 1.12s]
+[0m10:43:06.776549 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:06.777557 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:06.778809 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:06.779818 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:06.780817 [info ] [Thread-1 (]: 3 of 7 START test not_null_book_loans_user_id .................................. [RUN]
+[0m10:43:06.781337 [info ] [Thread-2 (]: 4 of 7 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m10:43:06.782343 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_book_id.cd147c3a10, now test.dbt_project.not_null_book_loans_user_id.ea74709787)
+[0m10:43:06.783343 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_borrow_date.60f6c76397, now test.dbt_project.not_null_my_second_dbt_model_id.151b76d778)
+[0m10:43:06.784342 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:06.784342 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:06.791250 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:43:06.797197 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:43:06.801201 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (compile): 10:43:06.785346 => 10:43:06.800200
+[0m10:43:06.802725 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:06.803749 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (compile): 10:43:06.792192 => 10:43:06.803749
+[0m10:43:06.812482 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:43:06.813481 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:06.817562 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:43:06.819483 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:43:06.820991 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_user_id.ea74709787"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select user_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where user_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:06.822021 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:43:06.824128 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:43:06.828130 [debug] [Thread-2 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:06.829127 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:43:07.563277 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b3764b-0202-95a1-0000-041d03aa1fe6
+[0m10:43:07.565288 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_SECOND_DBT_MODEL' does not exist or not authorized.
+[0m10:43:07.565288 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (execute): 10:43:06.814483 => 10:43:07.565288
+[0m10:43:07.566284 [debug] [Thread-2 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m10:43:07.582648 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01b3764b-0202-95cc-0000-041d03a9ef0a
+[0m10:43:07.583572 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+[0m10:43:07.584581 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (execute): 10:43:06.804741 => 10:43:07.583572
+[0m10:43:07.584581 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: Close
+[0m10:43:07.662242 [debug] [Thread-2 (]: Database Error in test not_null_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_SECOND_DBT_MODEL' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_my_second_dbt_model_id.sql
+[0m10:43:07.662242 [error] [Thread-2 (]: 4 of 7 ERROR not_null_my_second_dbt_model_id ................................... [[31mERROR[0m in 0.88s]
+[0m10:43:07.664250 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:07.664250 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:07.666247 [info ] [Thread-2 (]: 5 of 7 START test unique_book_loans_book_id .................................... [RUN]
+[0m10:43:07.667247 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_my_second_dbt_model_id.151b76d778, now test.dbt_project.unique_book_loans_book_id.2366c367e6)
+[0m10:43:07.668338 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:07.676759 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:43:07.683287 [debug] [Thread-1 (]: Database Error in test not_null_book_loans_user_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_user_id.sql
+[0m10:43:07.684302 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (compile): 10:43:07.669246 => 10:43:07.683287
+[0m10:43:07.685294 [error] [Thread-1 (]: 3 of 7 ERROR not_null_book_loans_user_id ....................................... [[31mERROR[0m in 0.90s]
+[0m10:43:07.686541 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:07.688552 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:07.694084 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:43:07.695086 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:07.696093 [info ] [Thread-1 (]: 6 of 7 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m10:43:07.698084 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:43:07.699084 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_user_id.ea74709787, now test.dbt_project.unique_my_first_dbt_model_id.16e066b321)
+[0m10:43:07.700085 [debug] [Thread-2 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_book_loans_book_id.2366c367e6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    book_id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is not null
+group by book_id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:07.701087 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:07.701951 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:43:07.711045 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:43:07.715320 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (compile): 10:43:07.702967 => 10:43:07.714333
+[0m10:43:07.715320 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:07.718405 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:43:07.722222 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:43:07.724248 [debug] [Thread-1 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_first_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:07.726247 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:43:08.469378 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b3764b-0202-95cc-0000-041d03a9ef0e
+[0m10:43:08.470986 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+[0m10:43:08.472902 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (execute): 10:43:07.688552 => 10:43:08.471895
+[0m10:43:08.473894 [debug] [Thread-2 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: Close
+[0m10:43:08.594208 [debug] [Thread-2 (]: Database Error in test unique_book_loans_book_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_book_loans_book_id.sql
+[0m10:43:08.594208 [error] [Thread-2 (]: 5 of 7 ERROR unique_book_loans_book_id ......................................... [[31mERROR[0m in 0.93s]
+[0m10:43:08.596194 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:08.597156 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:08.597156 [info ] [Thread-2 (]: 7 of 7 START test unique_my_second_dbt_model_id ................................ [RUN]
+[0m10:43:08.599155 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_book_loans_book_id.2366c367e6, now test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493)
+[0m10:43:08.599155 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:08.606221 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:43:08.609218 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (compile): 10:43:08.600156 => 10:43:08.608220
+[0m10:43:08.610217 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:08.615876 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:43:08.618763 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:43:08.619871 [debug] [Thread-2 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:08.619871 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:43:08.873959 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01b3764b-0202-9656-0000-041d03aa2656
+[0m10:43:08.874959 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_FIRST_DBT_MODEL' does not exist or not authorized.
+[0m10:43:08.875960 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (execute): 10:43:07.716322 => 10:43:08.874959
+[0m10:43:08.876959 [debug] [Thread-1 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: Close
+[0m10:43:08.955216 [debug] [Thread-1 (]: Database Error in test unique_my_first_dbt_model_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_FIRST_DBT_MODEL' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_first_dbt_model_id.sql
+[0m10:43:08.956216 [error] [Thread-1 (]: 6 of 7 ERROR unique_my_first_dbt_model_id ...................................... [[31mERROR[0m in 1.26s]
+[0m10:43:08.957219 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:09.229472 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01b3764b-0202-95cc-0000-041d03a9ef12
+[0m10:43:09.232154 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_SECOND_DBT_MODEL' does not exist or not authorized.
+[0m10:43:09.234069 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (execute): 10:43:08.611216 => 10:43:09.233138
+[0m10:43:09.235149 [debug] [Thread-2 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: Close
+[0m10:43:09.338632 [debug] [Thread-2 (]: Database Error in test unique_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_SECOND_DBT_MODEL' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_second_dbt_model_id.sql
+[0m10:43:09.339634 [error] [Thread-2 (]: 7 of 7 ERROR unique_my_second_dbt_model_id ..................................... [[31mERROR[0m in 0.74s]
+[0m10:43:09.342162 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:09.344169 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:43:09.345162 [debug] [MainThread]: Connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2' was properly closed.
+[0m10:43:09.345162 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_first_dbt_model_id.16e066b321' was properly closed.
+[0m10:43:09.346166 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m10:43:09.346166 [info ] [MainThread]:
+[0m10:43:09.347162 [info ] [MainThread]: Finished running 7 tests in 0 hours 0 minutes and 4.53 seconds (4.53s).
+[0m10:43:09.350161 [debug] [MainThread]: Command end result
+[0m10:43:09.365804 [info ] [MainThread]:
+[0m10:43:09.368805 [info ] [MainThread]: [31mCompleted with 7 errors and 0 warnings:[0m
+[0m10:43:09.370804 [info ] [MainThread]:
+[0m10:43:09.372320 [error] [MainThread]:   Database Error in test not_null_book_loans_book_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_book_id.sql
+[0m10:43:09.376339 [info ] [MainThread]:
+[0m10:43:09.377332 [error] [MainThread]:   Database Error in test not_null_book_loans_borrow_date (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_borrow_date.sql
+[0m10:43:09.379327 [info ] [MainThread]:
+[0m10:43:09.379327 [error] [MainThread]:   Database Error in test not_null_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_SECOND_DBT_MODEL' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_my_second_dbt_model_id.sql
+[0m10:43:09.381843 [info ] [MainThread]:
+[0m10:43:09.383036 [error] [MainThread]:   Database Error in test not_null_book_loans_user_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\not_null_book_loans_user_id.sql
+[0m10:43:09.384123 [info ] [MainThread]:
+[0m10:43:09.385130 [error] [MainThread]:   Database Error in test unique_book_loans_book_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.BOOK_LOANS' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_book_loans_book_id.sql
+[0m10:43:09.386130 [info ] [MainThread]:
+[0m10:43:09.389147 [error] [MainThread]:   Database Error in test unique_my_first_dbt_model_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_FIRST_DBT_MODEL' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_first_dbt_model_id.sql
+[0m10:43:09.391153 [info ] [MainThread]:
+[0m10:43:09.393762 [error] [MainThread]:   Database Error in test unique_my_second_dbt_model_id (models\example\schema.yml)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_JULIAN_IST_DER_BESTE.TEST_SCHEMA_2.MY_SECOND_DBT_MODEL' does not exist or not authorized.
+  compiled Code at target\run\dbt_project\models\example\schema.yml\unique_my_second_dbt_model_id.sql
+[0m10:43:09.394760 [info ] [MainThread]:
+[0m10:43:09.395844 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=7 SKIP=0 TOTAL=7
+[0m10:43:09.397761 [debug] [MainThread]: Command `dbt test` failed at 10:43:09.396761 after 6.64 seconds
+[0m10:43:09.397761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029001D1BFE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290043183E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029001E9AAB0>]}
+[0m10:43:09.398760 [debug] [MainThread]: Flushing usage events
+[0m10:43:23.610892 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863DF4A3C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863DF4A540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863DF4B290>]}
+
+
+============================== 10:43:23.614923 | 7d24ca59-064b-424e-87a9-bb0938700d4c ==============================
+[0m10:43:23.614923 [info ] [MainThread]: Running with dbt=1.7.11
+[0m10:43:23.616898 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\JulianGourmelon-aret\\OneDrive - areto consulting gmbh\\Dokumente\\dbt_full_pipeline\\dbt_project\\logs', 'profiles_dir': 'C:\\Users\\JulianGourmelon-aret\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:43:24.092003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863ECF9700>]}
+[0m10:43:24.205714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863DF94EC0>]}
+[0m10:43:24.207715 [info ] [MainThread]: Registered adapter: snowflake=1.7.3
+[0m10:43:24.215273 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m10:43:24.305319 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:43:24.305319 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:43:24.312028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863EE12F30>]}
+[0m10:43:24.330655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863EF52B10>]}
+[0m10:43:24.331676 [info ] [MainThread]: Found 5 models, 7 tests, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m10:43:24.332671 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863ECFBEC0>]}
+[0m10:43:24.336677 [info ] [MainThread]:
+[0m10:43:24.338678 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:43:24.383336 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste'
+[0m10:43:24.404873 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste"
+[0m10:43:24.406125 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "connection_name": "list_DBT_Julian_ist_der_Beste"} */
+show terse schemas in database DBT_Julian_ist_der_Beste
+    limit 10000
+[0m10:43:24.406125 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:43:25.153808 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1.0 seconds
+[0m10:43:25.155807 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste: Close
+[0m10:43:25.239356 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2'
+[0m10:43:25.246882 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"
+[0m10:43:25.247881 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "connection_name": "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"} */
+show terse objects in DBT_Julian_ist_der_Beste.TEST_SCHEMA_2 limit 10000
+[0m10:43:25.248879 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:43:25.739318 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.0 seconds
+[0m10:43:25.740934 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: Close
+[0m10:43:25.833928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863EE2FB90>]}
+[0m10:43:25.835850 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m10:43:25.837842 [info ] [MainThread]:
+[0m10:43:25.843359 [debug] [Thread-1 (]: Began running node model.dbt_project.book_loans
+[0m10:43:25.843359 [debug] [Thread-2 (]: Began running node model.dbt_project.my_first_dbt_model
+[0m10:43:25.844451 [info ] [Thread-1 (]: 1 of 5 START sql table model TEST_SCHEMA_2.book_loans .......................... [RUN]
+[0m10:43:25.846362 [info ] [Thread-2 (]: 2 of 5 START sql table model TEST_SCHEMA_2.my_first_dbt_model .................. [RUN]
+[0m10:43:25.847363 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.dbt_project.book_loans'
+[0m10:43:25.848360 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.dbt_project.my_first_dbt_model'
+[0m10:43:25.849369 [debug] [Thread-1 (]: Began compiling node model.dbt_project.book_loans
+[0m10:43:25.849369 [debug] [Thread-2 (]: Began compiling node model.dbt_project.my_first_dbt_model
+[0m10:43:25.864614 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.book_loans"
+[0m10:43:25.866619 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.my_first_dbt_model"
+[0m10:43:25.869615 [debug] [Thread-1 (]: Timing info for model.dbt_project.book_loans (compile): 10:43:25.850877 => 10:43:25.868633
+[0m10:43:25.871332 [debug] [Thread-1 (]: Began executing node model.dbt_project.book_loans
+[0m10:43:25.874164 [debug] [Thread-2 (]: Timing info for model.dbt_project.my_first_dbt_model (compile): 10:43:25.864614 => 10:43:25.873157
+[0m10:43:25.911425 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_project.book_loans"
+[0m10:43:25.911425 [debug] [Thread-2 (]: Began executing node model.dbt_project.my_first_dbt_model
+[0m10:43:25.915432 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_project.my_first_dbt_model"
+[0m10:43:25.917431 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_project.book_loans"
+[0m10:43:25.918431 [debug] [Thread-1 (]: On model.dbt_project.book_loans: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "model.dbt_project.book_loans"} */
+create or replace transient table DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+         as
+        (
+
+WITH book_loans AS (
+    SELECT 1 AS book_id, 101 AS user_id, '2024-01-01' AS borrow_date
+    UNION ALL
+    SELECT 2, 102, '2024-01-05'
+    UNION ALL
+    SELECT 3, 103, '2024-02-02'
+    UNION ALL
+    SELECT 4, 104, '2024-02-15'
+    UNION ALL
+    SELECT 5, 105, '2024-03-01'
+),
+recent_loans AS (
+    SELECT *
+    FROM book_loans
+    WHERE borrow_date > '2024-01-31'
+)
+SELECT *
+FROM recent_loans
+        );
+[0m10:43:25.919710 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:43:25.921229 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_project.my_first_dbt_model"
+[0m10:43:25.923252 [debug] [Thread-2 (]: On model.dbt_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "model.dbt_project.my_first_dbt_model"} */
+create or replace transient table DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_first_dbt_model
+         as
+        (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+        );
+[0m10:43:25.925239 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:43:27.052321 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:27.072036 [debug] [Thread-2 (]: Timing info for model.dbt_project.my_first_dbt_model (execute): 10:43:25.912433 => 10:43:27.072036
+[0m10:43:27.074052 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:27.074052 [debug] [Thread-2 (]: On model.dbt_project.my_first_dbt_model: Close
+[0m10:43:27.078034 [debug] [Thread-1 (]: Timing info for model.dbt_project.book_loans (execute): 10:43:25.874164 => 10:43:27.078034
+[0m10:43:27.080856 [debug] [Thread-1 (]: On model.dbt_project.book_loans: Close
+[0m10:43:27.168540 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018640279850>]}
+[0m10:43:27.169697 [info ] [Thread-2 (]: 2 of 5 OK created sql table model TEST_SCHEMA_2.my_first_dbt_model ............. [[32mSUCCESS 1[0m in 1.32s]
+[0m10:43:27.170702 [debug] [Thread-2 (]: Finished running node model.dbt_project.my_first_dbt_model
+[0m10:43:27.171712 [debug] [Thread-2 (]: Began running node model.dbt_project.my_second_dbt_model
+[0m10:43:27.172708 [info ] [Thread-2 (]: 3 of 5 START sql view model TEST_SCHEMA_2.my_second_dbt_model .................. [RUN]
+[0m10:43:27.174975 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.my_first_dbt_model, now model.dbt_project.my_second_dbt_model)
+[0m10:43:27.175975 [debug] [Thread-2 (]: Began compiling node model.dbt_project.my_second_dbt_model
+[0m10:43:27.181917 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.my_second_dbt_model"
+[0m10:43:27.182914 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018640250D10>]}
+[0m10:43:27.186934 [info ] [Thread-1 (]: 1 of 5 OK created sql table model TEST_SCHEMA_2.book_loans ..................... [[32mSUCCESS 1[0m in 1.34s]
+[0m10:43:27.188920 [debug] [Thread-2 (]: Timing info for model.dbt_project.my_second_dbt_model (compile): 10:43:27.177002 => 10:43:27.188920
+[0m10:43:27.191439 [debug] [Thread-1 (]: Finished running node model.dbt_project.book_loans
+[0m10:43:27.194477 [debug] [Thread-2 (]: Began executing node model.dbt_project.my_second_dbt_model
+[0m10:43:27.195800 [debug] [Thread-1 (]: Began running node model.dbt_project.my_second_python_model
+[0m10:43:27.226134 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_project.my_second_dbt_model"
+[0m10:43:27.227165 [info ] [Thread-1 (]: 4 of 5 START python table model TEST_SCHEMA_2.my_second_python_model ........... [RUN]
+[0m10:43:27.229139 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.book_loans, now model.dbt_project.my_second_python_model)
+[0m10:43:27.230133 [debug] [Thread-1 (]: Began compiling node model.dbt_project.my_second_python_model
+[0m10:43:27.231136 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_project.my_second_dbt_model"
+[0m10:43:27.252472 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.my_second_python_model"
+[0m10:43:27.253480 [debug] [Thread-2 (]: On model.dbt_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "model.dbt_project.my_second_dbt_model"} */
+create or replace   view DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_first_dbt_model
+where id = 1
+  );
+[0m10:43:27.255481 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:43:27.259478 [debug] [Thread-1 (]: Timing info for model.dbt_project.my_second_python_model (compile): 10:43:27.231136 => 10:43:27.259478
+[0m10:43:27.261989 [debug] [Thread-1 (]: Began executing node model.dbt_project.my_second_python_model
+[0m10:43:27.267006 [debug] [Thread-1 (]: Writing runtime python for node "model.dbt_project.my_second_python_model"
+[0m10:43:27.269998 [debug] [Thread-1 (]: Using snowflake connection "model.dbt_project.my_second_python_model"
+[0m10:43:27.272352 [debug] [Thread-1 (]: On model.dbt_project.my_second_python_model: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "model.dbt_project.my_second_python_model"} */
+WITH my_second_python_model__dbt_sp AS PROCEDURE ()
+
+RETURNS STRING
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.8'
+PACKAGES = ('snowflake-snowpark-python')
+
+HANDLER = 'main'
+EXECUTE AS CALLER
+AS
+$$
+
+import sys
+sys._xoptions['snowflake_partner_attribution'].append("dbtLabs_dbtPython")
+
+
+
+
+from snowflake.snowpark.functions import udf
+
+def model(dbt, session):
+    # Must be either table or incremental (view is not currently supported)
+    dbt.config(materialized = "table")
+
+    # User defined function
+    @udf
+    def add_one(x: int) -> int:
+        x = 0 if not x else x
+        return x + 1
+
+    # DataFrame representing an upstream model
+    df = dbt.ref("book_loans")
+
+    # Add a new column containing the id incremented by one
+    df = df.withColumn("BOOK_ID_PLUS_ONE", add_one(df["BOOK_ID"]))
+
+    return df
+
+
+# This part is user provided model code
+# you will need to copy the next section to run the code
+# COMMAND ----------
+# this part is dbt logic for get ref work, do not modify
+
+def ref(*args, **kwargs):
+    refs = {"book_loans": "DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans"}
+    key = '.'.join(args)
+    version = kwargs.get("v") or kwargs.get("version")
+    if version:
+        key += f".v{version}"
+    dbt_load_df_function = kwargs.get("dbt_load_df_function")
+    return dbt_load_df_function(refs[key])
+
+
+def source(*args, dbt_load_df_function):
+    sources = {}
+    key = '.'.join(args)
+    return dbt_load_df_function(sources[key])
+
+
+config_dict = {}
+
+
+class config:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    @staticmethod
+    def get(key, default=None):
+        return config_dict.get(key, default)
+
+class this:
+    """dbt.this() or dbt.this.identifier"""
+    database = "DBT_Julian_ist_der_Beste"
+    schema = "TEST_SCHEMA_2"
+    identifier = "my_second_python_model"
+
+    def __repr__(self):
+        return 'DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_python_model'
+
+
+class dbtObj:
+    def __init__(self, load_df_function) -> None:
+        self.source = lambda *args: source(*args, dbt_load_df_function=load_df_function)
+        self.ref = lambda *args, **kwargs: ref(*args, **kwargs, dbt_load_df_function=load_df_function)
+        self.config = config
+        self.this = this()
+        self.is_incremental = False
+
+# COMMAND ----------
+
+# To run this in snowsight, you need to select entry point to be main
+# And you may have to modify the return type to text to get the result back
+# def main(session):
+#     dbt = dbtObj(session.table)
+#     df = model(dbt, session)
+#     return df.collect()
+
+# to run this in local notebook, you need to create a session following examples https://github.com/Snowflake-Labs/sfguide-getting-started-snowpark-python
+# then you can do the following to run model
+# dbt = dbtObj(session.table)
+# df = model(dbt, session)
+
+
+def materialize(session, df, target_relation):
+    # make sure pandas exists
+    import importlib.util
+    package_name = 'pandas'
+    if importlib.util.find_spec(package_name):
+        import pandas
+        if isinstance(df, pandas.core.frame.DataFrame):
+          session.use_database(target_relation.database)
+          session.use_schema(target_relation.schema)
+          # session.write_pandas does not have overwrite function
+          df = session.createDataFrame(df)
+
+    df.write.mode("overwrite").save_as_table('DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_python_model', table_type='transient')
+
+def main(session):
+    dbt = dbtObj(session.table)
+    df = model(dbt, session)
+    materialize(session, df, dbt.this)
+    return "OK"
+
+
+$$
+CALL my_second_python_model__dbt_sp();
+[0m10:43:27.273383 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:43:28.099738 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:28.104352 [debug] [Thread-2 (]: Timing info for model.dbt_project.my_second_dbt_model (execute): 10:43:27.196810 => 10:43:28.103352
+[0m10:43:28.104352 [debug] [Thread-2 (]: On model.dbt_project.my_second_dbt_model: Close
+[0m10:43:28.189405 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001864027A7E0>]}
+[0m10:43:28.191052 [info ] [Thread-2 (]: 3 of 5 OK created sql view model TEST_SCHEMA_2.my_second_dbt_model ............. [[32mSUCCESS 1[0m in 1.01s]
+[0m10:43:28.192925 [debug] [Thread-2 (]: Finished running node model.dbt_project.my_second_dbt_model
+[0m10:43:28.193935 [debug] [Thread-2 (]: Began running node model.dbt_project.snowpark_demo
+[0m10:43:28.194932 [info ] [Thread-2 (]: 5 of 5 START python table model TEST_SCHEMA_2.snowpark_demo .................... [RUN]
+[0m10:43:28.195933 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.my_second_dbt_model, now model.dbt_project.snowpark_demo)
+[0m10:43:28.196933 [debug] [Thread-2 (]: Began compiling node model.dbt_project.snowpark_demo
+[0m10:43:28.200937 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.snowpark_demo"
+[0m10:43:28.202028 [debug] [Thread-2 (]: Timing info for model.dbt_project.snowpark_demo (compile): 10:43:28.196933 => 10:43:28.202028
+[0m10:43:28.203326 [debug] [Thread-2 (]: Began executing node model.dbt_project.snowpark_demo
+[0m10:43:28.207572 [debug] [Thread-2 (]: Writing runtime python for node "model.dbt_project.snowpark_demo"
+[0m10:43:28.210679 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_project.snowpark_demo"
+[0m10:43:28.213686 [debug] [Thread-2 (]: On model.dbt_project.snowpark_demo: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "model.dbt_project.snowpark_demo"} */
+WITH snowpark_demo__dbt_sp AS PROCEDURE ()
+
+RETURNS STRING
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.8'
+PACKAGES = ('snowflake-snowpark-python')
+
+HANDLER = 'main'
+EXECUTE AS CALLER
+AS
+$$
+
+import sys
+sys._xoptions['snowflake_partner_attribution'].append("dbtLabs_dbtPython")
+
+
+
+
+def model(dbt, session):
+    # Must be either table or incremental (view is not currently supported)
+    dbt.config(materialized = "table")
+
+    # DataFrame representing an upstream model
+    df = dbt.ref("book_loans")
+
+    return df
+
+
+# This part is user provided model code
+# you will need to copy the next section to run the code
+# COMMAND ----------
+# this part is dbt logic for get ref work, do not modify
+
+def ref(*args, **kwargs):
+    refs = {"book_loans": "DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans"}
+    key = '.'.join(args)
+    version = kwargs.get("v") or kwargs.get("version")
+    if version:
+        key += f".v{version}"
+    dbt_load_df_function = kwargs.get("dbt_load_df_function")
+    return dbt_load_df_function(refs[key])
+
+
+def source(*args, dbt_load_df_function):
+    sources = {}
+    key = '.'.join(args)
+    return dbt_load_df_function(sources[key])
+
+
+config_dict = {}
+
+
+class config:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    @staticmethod
+    def get(key, default=None):
+        return config_dict.get(key, default)
+
+class this:
+    """dbt.this() or dbt.this.identifier"""
+    database = "DBT_Julian_ist_der_Beste"
+    schema = "TEST_SCHEMA_2"
+    identifier = "snowpark_demo"
+
+    def __repr__(self):
+        return 'DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.snowpark_demo'
+
+
+class dbtObj:
+    def __init__(self, load_df_function) -> None:
+        self.source = lambda *args: source(*args, dbt_load_df_function=load_df_function)
+        self.ref = lambda *args, **kwargs: ref(*args, **kwargs, dbt_load_df_function=load_df_function)
+        self.config = config
+        self.this = this()
+        self.is_incremental = False
+
+# COMMAND ----------
+
+# To run this in snowsight, you need to select entry point to be main
+# And you may have to modify the return type to text to get the result back
+# def main(session):
+#     dbt = dbtObj(session.table)
+#     df = model(dbt, session)
+#     return df.collect()
+
+# to run this in local notebook, you need to create a session following examples https://github.com/Snowflake-Labs/sfguide-getting-started-snowpark-python
+# then you can do the following to run model
+# dbt = dbtObj(session.table)
+# df = model(dbt, session)
+
+
+def materialize(session, df, target_relation):
+    # make sure pandas exists
+    import importlib.util
+    package_name = 'pandas'
+    if importlib.util.find_spec(package_name):
+        import pandas
+        if isinstance(df, pandas.core.frame.DataFrame):
+          session.use_database(target_relation.database)
+          session.use_schema(target_relation.schema)
+          # session.write_pandas does not have overwrite function
+          df = session.createDataFrame(df)
+
+    df.write.mode("overwrite").save_as_table('DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.snowpark_demo', table_type='transient')
+
+def main(session):
+    dbt = dbtObj(session.table)
+    df = model(dbt, session)
+    materialize(session, df, dbt.this)
+    return "OK"
+
+
+$$
+CALL snowpark_demo__dbt_sp();
+[0m10:43:28.214772 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:43:34.271593 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 6.0 seconds
+[0m10:43:34.276614 [debug] [Thread-2 (]: Timing info for model.dbt_project.snowpark_demo (execute): 10:43:28.204335 => 10:43:34.276614
+[0m10:43:34.278608 [debug] [Thread-2 (]: On model.dbt_project.snowpark_demo: Close
+[0m10:43:34.371136 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018640370C20>]}
+[0m10:43:34.372143 [info ] [Thread-2 (]: 5 of 5 OK created python table model TEST_SCHEMA_2.snowpark_demo ............... [[32mSUCCESS 1[0m in 6.18s]
+[0m10:43:34.374153 [debug] [Thread-2 (]: Finished running node model.dbt_project.snowpark_demo
+[0m10:43:35.475796 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 8.0 seconds
+[0m10:43:35.481314 [debug] [Thread-1 (]: Timing info for model.dbt_project.my_second_python_model (execute): 10:43:27.261989 => 10:43:35.481314
+[0m10:43:35.482328 [debug] [Thread-1 (]: On model.dbt_project.my_second_python_model: Close
+[0m10:43:35.576121 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7d24ca59-064b-424e-87a9-bb0938700d4c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000186403719D0>]}
+[0m10:43:35.577122 [info ] [Thread-1 (]: 4 of 5 OK created python table model TEST_SCHEMA_2.my_second_python_model ...... [[32mSUCCESS 1[0m in 8.35s]
+[0m10:43:35.579126 [debug] [Thread-1 (]: Finished running node model.dbt_project.my_second_python_model
+[0m10:43:35.582722 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:43:35.583651 [debug] [MainThread]: Connection 'list_DBT_Julian_ist_der_Beste' was properly closed.
+[0m10:43:35.583651 [debug] [MainThread]: Connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2' was properly closed.
+[0m10:43:35.584655 [debug] [MainThread]: Connection 'model.dbt_project.my_second_python_model' was properly closed.
+[0m10:43:35.585644 [debug] [MainThread]: Connection 'model.dbt_project.snowpark_demo' was properly closed.
+[0m10:43:35.586645 [info ] [MainThread]:
+[0m10:43:35.587647 [info ] [MainThread]: Finished running 4 table models, 1 view model in 0 hours 0 minutes and 11.25 seconds (11.25s).
+[0m10:43:35.588649 [debug] [MainThread]: Command end result
+[0m10:43:35.602907 [info ] [MainThread]:
+[0m10:43:35.603919 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:43:35.605924 [info ] [MainThread]:
+[0m10:43:35.609913 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[0m10:43:35.612408 [debug] [MainThread]: Command `dbt run` succeeded at 10:43:35.612408 after 12.12 seconds
+[0m10:43:35.613396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863DCDA3F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863DF27D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001863E267470>]}
+[0m10:43:35.614395 [debug] [MainThread]: Flushing usage events
+[0m10:43:44.218512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F790E62C30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F790E62A20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F790E62840>]}
+
+
+============================== 10:43:44.223012 | e089aff6-d6f6-44c0-9a1c-f97a5c64f782 ==============================
+[0m10:43:44.223012 [info ] [MainThread]: Running with dbt=1.7.11
+[0m10:43:44.224014 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\JulianGourmelon-aret\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\JulianGourmelon-aret\\OneDrive - areto consulting gmbh\\Dokumente\\dbt_full_pipeline\\dbt_project\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:43:44.701628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e089aff6-d6f6-44c0-9a1c-f97a5c64f782', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F790E63A10>]}
+[0m10:43:44.792902 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e089aff6-d6f6-44c0-9a1c-f97a5c64f782', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F791C65700>]}
+[0m10:43:44.794857 [info ] [MainThread]: Registered adapter: snowflake=1.7.3
+[0m10:43:44.802561 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m10:43:44.895790 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:43:44.895790 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:43:44.904305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e089aff6-d6f6-44c0-9a1c-f97a5c64f782', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F791CF31A0>]}
+[0m10:43:44.920019 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e089aff6-d6f6-44c0-9a1c-f97a5c64f782', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F791E169F0>]}
+[0m10:43:44.921019 [info ] [MainThread]: Found 5 models, 7 tests, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m10:43:44.922079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e089aff6-d6f6-44c0-9a1c-f97a5c64f782', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F791E177A0>]}
+[0m10:43:44.923077 [info ] [MainThread]:
+[0m10:43:44.924179 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:43:44.926078 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2'
+[0m10:43:44.945308 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"
+[0m10:43:44.946307 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "connection_name": "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"} */
+show terse objects in DBT_Julian_ist_der_Beste.TEST_SCHEMA_2 limit 10000
+[0m10:43:44.947309 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:43:45.698505 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.0 seconds
+[0m10:43:45.702133 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: Close
+[0m10:43:45.789503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e089aff6-d6f6-44c0-9a1c-f97a5c64f782', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F791A70320>]}
+[0m10:43:45.789503 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m10:43:45.791010 [info ] [MainThread]:
+[0m10:43:45.795519 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:45.795519 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:45.796545 [info ] [Thread-1 (]: 1 of 7 START test not_null_book_loans_book_id .................................. [RUN]
+[0m10:43:45.796545 [info ] [Thread-2 (]: 2 of 7 START test not_null_book_loans_borrow_date .............................. [RUN]
+[0m10:43:45.798522 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_book_id.cd147c3a10'
+[0m10:43:45.799520 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_borrow_date.60f6c76397'
+[0m10:43:45.799520 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:45.802036 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:45.824841 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:43:45.831340 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:43:45.833859 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (compile): 10:43:45.804207 => 10:43:45.833346
+[0m10:43:45.834908 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:45.835866 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (compile): 10:43:45.825839 => 10:43:45.834908
+[0m10:43:45.861366 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:43:45.861366 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:45.866374 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:43:45.867380 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m10:43:45.868376 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select book_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:45.869372 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:43:45.870877 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m10:43:45.872886 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select borrow_date
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where borrow_date is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:45.875900 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:43:46.653177 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:46.667929 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (execute): 10:43:45.835866 => 10:43:46.666930
+[0m10:43:46.668851 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: Close
+[0m10:43:46.748073 [info ] [Thread-1 (]: 1 of 7 PASS not_null_book_loans_book_id ........................................ [[32mPASS[0m in 0.95s]
+[0m10:43:46.751088 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m10:43:46.752701 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:46.754702 [info ] [Thread-1 (]: 3 of 7 START test not_null_book_loans_user_id .................................. [RUN]
+[0m10:43:46.757700 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_book_id.cd147c3a10, now test.dbt_project.not_null_book_loans_user_id.ea74709787)
+[0m10:43:46.759702 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:46.767784 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:43:46.772044 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (compile): 10:43:46.761798 => 10:43:46.770791
+[0m10:43:46.775034 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:46.778034 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:43:46.780049 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m10:43:46.781034 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_user_id.ea74709787"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select user_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where user_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:46.781542 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:43:46.846040 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:46.850018 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (execute): 10:43:45.862371 => 10:43:46.849014
+[0m10:43:46.850937 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: Close
+[0m10:43:46.929973 [info ] [Thread-2 (]: 2 of 7 PASS not_null_book_loans_borrow_date .................................... [[32mPASS[0m in 1.13s]
+[0m10:43:46.931017 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m10:43:46.932208 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:46.933246 [info ] [Thread-2 (]: 4 of 7 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m10:43:46.935206 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_borrow_date.60f6c76397, now test.dbt_project.not_null_my_second_dbt_model_id.151b76d778)
+[0m10:43:46.936209 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:46.940883 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:43:46.942777 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (compile): 10:43:46.937247 => 10:43:46.941773
+[0m10:43:46.943775 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:46.946770 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:43:46.948775 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m10:43:46.948775 [debug] [Thread-2 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is null
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:46.949773 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:43:47.483589 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:47.488488 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (execute): 10:43:46.775034 => 10:43:47.487546
+[0m10:43:47.492026 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: Close
+[0m10:43:47.576720 [info ] [Thread-1 (]: 3 of 7 PASS not_null_book_loans_user_id ........................................ [[32mPASS[0m in 0.82s]
+[0m10:43:47.578722 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m10:43:47.580728 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:47.581795 [info ] [Thread-1 (]: 5 of 7 START test unique_book_loans_book_id .................................... [RUN]
+[0m10:43:47.584877 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_user_id.ea74709787, now test.dbt_project.unique_book_loans_book_id.2366c367e6)
+[0m10:43:47.585798 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:47.598365 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:43:47.599412 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (compile): 10:43:47.586789 => 10:43:47.599412
+[0m10:43:47.601922 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:47.610937 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:43:47.612457 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m10:43:47.613463 [debug] [Thread-1 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_book_loans_book_id.2366c367e6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    book_id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is not null
+group by book_id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:47.613463 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:43:47.642062 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:47.644055 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (execute): 10:43:46.943775 => 10:43:47.644055
+[0m10:43:47.645054 [debug] [Thread-2 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m10:43:47.732809 [info ] [Thread-2 (]: 4 of 7 PASS not_null_my_second_dbt_model_id .................................... [[32mPASS[0m in 0.80s]
+[0m10:43:47.734818 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m10:43:47.734818 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:47.735813 [info ] [Thread-2 (]: 6 of 7 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m10:43:47.737812 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_my_second_dbt_model_id.151b76d778, now test.dbt_project.unique_my_first_dbt_model_id.16e066b321)
+[0m10:43:47.737812 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:47.742965 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:43:47.744972 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (compile): 10:43:47.738818 => 10:43:47.743980
+[0m10:43:47.745970 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:47.749970 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:43:47.754494 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m10:43:47.756492 [debug] [Thread-2 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_first_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:47.759599 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m10:43:48.289760 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:48.292885 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (execute): 10:43:47.601922 => 10:43:48.291861
+[0m10:43:48.292885 [debug] [Thread-1 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: Close
+[0m10:43:48.470980 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:48.472898 [info ] [Thread-1 (]: 5 of 7 PASS unique_book_loans_book_id .......................................... [[32mPASS[0m in 0.89s]
+[0m10:43:48.478976 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (execute): 10:43:47.745970 => 10:43:48.478976
+[0m10:43:48.480912 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m10:43:48.483345 [debug] [Thread-2 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: Close
+[0m10:43:48.484265 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:48.488255 [info ] [Thread-1 (]: 7 of 7 START test unique_my_second_dbt_model_id ................................ [RUN]
+[0m10:43:48.490757 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_book_loans_book_id.2366c367e6, now test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493)
+[0m10:43:48.491689 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:48.500779 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:43:48.503384 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (compile): 10:43:48.492689 => 10:43:48.502379
+[0m10:43:48.505117 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:48.509402 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:43:48.511916 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m10:43:48.512920 [debug] [Thread-1 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m10:43:48.513931 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:43:48.572910 [info ] [Thread-2 (]: 6 of 7 PASS unique_my_first_dbt_model_id ....................................... [[32mPASS[0m in 0.84s]
+[0m10:43:48.573914 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m10:43:49.138094 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m10:43:49.144132 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (execute): 10:43:48.506126 => 10:43:49.143118
+[0m10:43:49.146195 [debug] [Thread-1 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: Close
+[0m10:43:49.246423 [info ] [Thread-1 (]: 7 of 7 PASS unique_my_second_dbt_model_id ...................................... [[32mPASS[0m in 0.76s]
+[0m10:43:49.248409 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m10:43:49.252940 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:43:49.252940 [debug] [MainThread]: Connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2' was properly closed.
+[0m10:43:49.253940 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m10:43:49.254941 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_first_dbt_model_id.16e066b321' was properly closed.
+[0m10:43:49.255953 [info ] [MainThread]:
+[0m10:43:49.257939 [info ] [MainThread]: Finished running 7 tests in 0 hours 0 minutes and 4.33 seconds (4.33s).
+[0m10:43:49.260939 [debug] [MainThread]: Command end result
+[0m10:43:49.276414 [info ] [MainThread]:
+[0m10:43:49.277414 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:43:49.278900 [info ] [MainThread]:
+[0m10:43:49.279426 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m10:43:49.281519 [debug] [MainThread]: Command `dbt test` succeeded at 10:43:49.280987 after 5.18 seconds
+[0m10:43:49.282038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F790B140B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F790ED9460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F78FF86A50>]}
+[0m10:43:49.283165 [debug] [MainThread]: Flushing usage events
+[0m17:07:56.830700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492B49A270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492B49B4A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492B499F70>]}
+
+
+============================== 17:07:56.835701 | 6117c8a7-7666-4492-8100-46c740745471 ==============================
+[0m17:07:56.835701 [info ] [MainThread]: Running with dbt=1.7.11
+[0m17:07:56.836708 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\JulianGourmelon-aret\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\JulianGourmelon-aret\\OneDrive - areto consulting gmbh\\Dokumente\\dbt_full_pipeline\\dbt_project\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt test', 'send_anonymous_usage_stats': 'True'}
+[0m17:07:57.611367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6117c8a7-7666-4492-8100-46c740745471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492B49A270>]}
+[0m17:07:57.677297 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6117c8a7-7666-4492-8100-46c740745471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492C24BCB0>]}
+[0m17:07:57.679295 [info ] [MainThread]: Registered adapter: snowflake=1.7.3
+[0m17:07:57.698958 [debug] [MainThread]: checksum: 1b58ec263fbd34ee8091684d6a2f6c1ad2902b1459e632a74eb63768af36ddb7, vars: {}, profile: , target: , version: 1.7.11
+[0m17:07:59.040726 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:07:59.041281 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:07:59.047403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6117c8a7-7666-4492-8100-46c740745471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492C382A80>]}
+[0m17:07:59.067024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6117c8a7-7666-4492-8100-46c740745471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492C49FB90>]}
+[0m17:07:59.067024 [info ] [MainThread]: Found 5 models, 7 tests, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m17:07:59.068225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6117c8a7-7666-4492-8100-46c740745471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492C22A5A0>]}
+[0m17:07:59.070220 [info ] [MainThread]:
+[0m17:07:59.072474 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:07:59.075591 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2'
+[0m17:07:59.091594 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"
+[0m17:07:59.093482 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "connection_name": "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"} */
+show terse objects in DBT_Julian_ist_der_Beste.TEST_SCHEMA_2 limit 10000
+[0m17:07:59.094495 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:08:27.158504 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 28.0 seconds
+[0m17:08:27.163594 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: Close
+[0m17:08:27.368517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6117c8a7-7666-4492-8100-46c740745471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492C49E180>]}
+[0m17:08:27.370608 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m17:08:27.372890 [info ] [MainThread]:
+[0m17:08:27.383382 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m17:08:27.384448 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m17:08:27.385459 [info ] [Thread-1 (]: 1 of 7 START test not_null_book_loans_book_id .................................. [RUN]
+[0m17:08:27.387364 [info ] [Thread-2 (]: 2 of 7 START test not_null_book_loans_borrow_date .............................. [RUN]
+[0m17:08:27.389694 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_book_id.cd147c3a10'
+[0m17:08:27.392694 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.dbt_project.not_null_book_loans_borrow_date.60f6c76397'
+[0m17:08:27.394234 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m17:08:27.396471 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m17:08:27.412995 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m17:08:27.415993 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m17:08:27.419101 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (compile): 17:08:27.397572 => 17:08:27.419101
+[0m17:08:27.421106 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (compile): 17:08:27.413992 => 17:08:27.420106
+[0m17:08:27.422101 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m17:08:27.423101 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m17:08:27.445360 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m17:08:27.447876 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m17:08:27.450872 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"
+[0m17:08:27.452990 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"
+[0m17:08:27.452990 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_book_id.cd147c3a10"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select book_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m17:08:27.453951 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_borrow_date.60f6c76397"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select borrow_date
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where borrow_date is null
+
+
+
+
+    ) dbt_internal_test
+[0m17:08:27.454872 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m17:08:27.455873 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m17:08:29.102486 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:08:29.114996 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_book_id.cd147c3a10 (execute): 17:08:27.423101 => 17:08:29.114013
+[0m17:08:29.115952 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_book_id.cd147c3a10: Close
+[0m17:08:30.266492 [info ] [Thread-1 (]: 1 of 7 PASS not_null_book_loans_book_id ........................................ [[32mPASS[0m in 2.88s]
+[0m17:08:30.268674 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_book_loans_book_id.cd147c3a10
+[0m17:08:30.269673 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m17:08:30.270675 [info ] [Thread-1 (]: 3 of 7 START test not_null_book_loans_user_id .................................. [RUN]
+[0m17:08:30.271741 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_book_id.cd147c3a10, now test.dbt_project.not_null_book_loans_user_id.ea74709787)
+[0m17:08:30.272744 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m17:08:30.280746 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m17:08:30.281752 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (compile): 17:08:30.273825 => 17:08:30.281752
+[0m17:08:30.283744 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m17:08:30.288441 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m17:08:30.294535 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.not_null_book_loans_user_id.ea74709787"
+[0m17:08:30.296544 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_book_loans_user_id.ea74709787"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select user_id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where user_id is null
+
+
+
+
+    ) dbt_internal_test
+[0m17:08:30.297740 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:08:31.894868 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 4.0 seconds
+[0m17:08:31.896882 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_book_loans_borrow_date.60f6c76397 (execute): 17:08:27.445360 => 17:08:31.896882
+[0m17:08:31.896882 [debug] [Thread-2 (]: On test.dbt_project.not_null_book_loans_borrow_date.60f6c76397: Close
+[0m17:08:32.316899 [info ] [Thread-2 (]: 2 of 7 PASS not_null_book_loans_borrow_date .................................... [[32mPASS[0m in 4.93s]
+[0m17:08:32.319144 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_book_loans_borrow_date.60f6c76397
+[0m17:08:32.320139 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m17:08:32.321464 [info ] [Thread-2 (]: 4 of 7 START test not_null_my_second_dbt_model_id .............................. [RUN]
+[0m17:08:32.322631 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_borrow_date.60f6c76397, now test.dbt_project.not_null_my_second_dbt_model_id.151b76d778)
+[0m17:08:32.323677 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m17:08:32.330769 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m17:08:32.333676 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (compile): 17:08:32.324783 => 17:08:32.332768
+[0m17:08:32.333676 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m17:08:32.337762 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m17:08:32.341795 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"
+[0m17:08:32.344437 [debug] [Thread-2 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.not_null_my_second_dbt_model_id.151b76d778"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+
+
+select id
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is null
+
+
+
+
+    ) dbt_internal_test
+[0m17:08:32.345436 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m17:08:33.055602 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.0 seconds
+[0m17:08:33.058724 [debug] [Thread-1 (]: Timing info for test.dbt_project.not_null_book_loans_user_id.ea74709787 (execute): 17:08:30.284824 => 17:08:33.058724
+[0m17:08:33.059734 [debug] [Thread-1 (]: On test.dbt_project.not_null_book_loans_user_id.ea74709787: Close
+[0m17:08:33.399927 [info ] [Thread-1 (]: 3 of 7 PASS not_null_book_loans_user_id ........................................ [[32mPASS[0m in 3.13s]
+[0m17:08:33.400922 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_book_loans_user_id.ea74709787
+[0m17:08:33.401933 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m17:08:33.402935 [info ] [Thread-1 (]: 5 of 7 START test unique_book_loans_book_id .................................... [RUN]
+[0m17:08:33.404352 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_book_loans_user_id.ea74709787, now test.dbt_project.unique_book_loans_book_id.2366c367e6)
+[0m17:08:33.405462 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m17:08:33.415739 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m17:08:33.417745 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (compile): 17:08:33.406182 => 17:08:33.416741
+[0m17:08:33.418990 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m17:08:33.422927 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m17:08:33.424926 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.unique_book_loans_book_id.2366c367e6"
+[0m17:08:33.428933 [debug] [Thread-1 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_book_loans_book_id.2366c367e6"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    book_id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.book_loans
+where book_id is not null
+group by book_id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m17:08:33.429924 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:08:35.189659 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:08:35.192890 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_book_loans_book_id.2366c367e6 (execute): 17:08:33.418990 => 17:08:35.192770
+[0m17:08:35.194891 [debug] [Thread-1 (]: On test.dbt_project.unique_book_loans_book_id.2366c367e6: Close
+[0m17:08:35.402786 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 3.0 seconds
+[0m17:08:35.406712 [debug] [Thread-2 (]: Timing info for test.dbt_project.not_null_my_second_dbt_model_id.151b76d778 (execute): 17:08:32.334760 => 17:08:35.405676
+[0m17:08:35.408775 [debug] [Thread-2 (]: On test.dbt_project.not_null_my_second_dbt_model_id.151b76d778: Close
+[0m17:08:35.508125 [info ] [Thread-1 (]: 5 of 7 PASS unique_book_loans_book_id .......................................... [[32mPASS[0m in 2.10s]
+[0m17:08:35.510054 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_book_loans_book_id.2366c367e6
+[0m17:08:35.512047 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m17:08:35.512047 [info ] [Thread-1 (]: 6 of 7 START test unique_my_first_dbt_model_id ................................. [RUN]
+[0m17:08:35.513124 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_book_loans_book_id.2366c367e6, now test.dbt_project.unique_my_first_dbt_model_id.16e066b321)
+[0m17:08:35.514631 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m17:08:35.519927 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m17:08:35.521746 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (compile): 17:08:35.514631 => 17:08:35.520941
+[0m17:08:35.522389 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m17:08:35.528427 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m17:08:35.531434 [debug] [Thread-1 (]: Using snowflake connection "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"
+[0m17:08:35.532428 [debug] [Thread-1 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_first_dbt_model_id.16e066b321"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_first_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m17:08:35.533430 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:08:36.616469 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:08:36.620907 [debug] [Thread-1 (]: Timing info for test.dbt_project.unique_my_first_dbt_model_id.16e066b321 (execute): 17:08:35.523424 => 17:08:36.619898
+[0m17:08:36.620907 [debug] [Thread-1 (]: On test.dbt_project.unique_my_first_dbt_model_id.16e066b321: Close
+[0m17:08:36.953807 [info ] [Thread-2 (]: 4 of 7 PASS not_null_my_second_dbt_model_id .................................... [[32mPASS[0m in 4.63s]
+[0m17:08:36.954808 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_my_second_dbt_model_id.151b76d778
+[0m17:08:36.956844 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m17:08:36.956844 [info ] [Thread-2 (]: 7 of 7 START test unique_my_second_dbt_model_id ................................ [RUN]
+[0m17:08:36.958809 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_my_second_dbt_model_id.151b76d778, now test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493)
+[0m17:08:36.959807 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m17:08:36.964808 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m17:08:36.967825 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (compile): 17:08:36.960807 => 17:08:36.966815
+[0m17:08:36.968812 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m17:08:36.973174 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m17:08:36.975182 [debug] [Thread-2 (]: Using snowflake connection "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"
+[0m17:08:36.977190 [debug] [Thread-2 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+
+
+
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+
+    ) dbt_internal_test
+[0m17:08:36.977190 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m17:08:36.982265 [info ] [Thread-1 (]: 6 of 7 PASS unique_my_first_dbt_model_id ....................................... [[32mPASS[0m in 1.47s]
+[0m17:08:36.984185 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_my_first_dbt_model_id.16e066b321
+[0m17:08:37.688080 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:08:37.691081 [debug] [Thread-2 (]: Timing info for test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493 (execute): 17:08:36.969807 => 17:08:37.691081
+[0m17:08:37.692096 [debug] [Thread-2 (]: On test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493: Close
+[0m17:08:37.771390 [info ] [Thread-2 (]: 7 of 7 PASS unique_my_second_dbt_model_id ...................................... [[32mPASS[0m in 0.81s]
+[0m17:08:37.773391 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493
+[0m17:08:37.778392 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:08:37.779399 [debug] [MainThread]: Connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2' was properly closed.
+[0m17:08:37.779399 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_first_dbt_model_id.16e066b321' was properly closed.
+[0m17:08:37.780393 [debug] [MainThread]: Connection 'test.dbt_project.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m17:08:37.781390 [info ] [MainThread]:
+[0m17:08:37.782397 [info ] [MainThread]: Finished running 7 tests in 0 hours 0 minutes and 38.71 seconds (38.71s).
+[0m17:08:37.784736 [debug] [MainThread]: Command end result
+[0m17:08:37.802933 [info ] [MainThread]:
+[0m17:08:37.803941 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:08:37.804942 [info ] [MainThread]:
+[0m17:08:37.807447 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m17:08:37.815970 [debug] [MainThread]: Command `dbt test` succeeded at 17:08:37.813970 after 41.12 seconds
+[0m17:08:37.816969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492A852900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492C22A5A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002492D920110>]}
+[0m17:08:37.817972 [debug] [MainThread]: Flushing usage events

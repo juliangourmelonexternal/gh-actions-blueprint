@@ -1,0 +1,40 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: book_loans  # Adjust the name if the actual model name in dbt differs
+    description: "A model representing book loans"
+    columns:
+      - name: book_id
+        description: "Unique identifier for the book"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "Identifier for the user who borrowed the book"
+        tests:
+          - not_null
+      - name: borrow_date
+        description: "The date when the book was borrowed"
+        tests:
+          - not_null
+      - name: not_future_date
+        args:
+          field_name: borrow_date
