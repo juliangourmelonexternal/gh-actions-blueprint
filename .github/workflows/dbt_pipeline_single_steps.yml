@@ -1,0 +1,86 @@
+name: DBT CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      cache-key: ${{ steps.cache-key.outputs.key }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Cache venv
+        id: cache-venv
+        uses: actions/cache@v2
+        with:
+          path: venv
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/requirements.txt') }}
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip python3-venv
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install dbt-snowflake pre-commit
+
+      - name: Generate cache key
+        id: cache-key
+        run: echo "::set-output name=key::${{ runner.os }}-venv-${{ hashFiles('**/requirements.txt') }}"
+
+  pre-commit-checks:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Cache venv
+        uses: actions/cache@v2
+        with:
+          path: venv
+          key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: Run pre-commit checks
+        run: |
+          source venv/bin/activate
+          pre-commit run --all-files
+
+  setup-dbt-profile:
+    needs: pre-commit-checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up dbt profile
+        run: |
+          mkdir -p /home/runner/.dbt
+          echo "$DBT_PROFILE_CONTENTS" > /home/runner/.dbt/profiles.yml
+        env:
+          DBT_PROFILE_CONTENTS: ${{ secrets.DBT_PROFILE_CONTENTS }}
+
+  dbt-tests:
+    needs: setup-dbt-profile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Run dbt tests
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install dbt-snowflake
+          cd ./dbt_project
+          dbt deps
+          dbt test
+        env:
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
