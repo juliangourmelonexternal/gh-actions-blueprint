@@ -6,7 +6,55 @@ on:
       - main
 
 jobs:
+  get-config:
+    runs-on: ubuntu-latest
+
+    outputs:
+      pre_commit: ${{ steps.set_output_variables.outputs.pre_commit }}
+      tests: ${{ steps.set_output_variables.outputs.tests }}
+      ecr: ${{ steps.set_output_variables.outputs.ecr }}
+      docker_hub: ${{ steps.set_output_variables.outputs.docker_hub }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Show current location
+        run: ls
+
+      - name: Install jq
+        run: sudo apt-get install jp
+
+      - name: Read config file
+        run: |
+          CONFIG_PATH='./config.json'
+          echo "Reading config file $CONFIG_PATH"
+          RUN_PRE_COMMIT_HOOKS=$(jq -r '.run_pre_commit_hooks' $CONFIG_PATH)
+          RUN_TESTS=$(jq -r '.run_tests' $CONFIG_PATH)
+          DEPLOY_TO_DOCKER_HUB=$(jq -r '.deploy_to_docker_hub' $CONFIG_PATH)
+          DEPLOY_TO_ECR=$(jq -r '.deploy_to_ecr' $CONFIG_PATH)
+
+          echo "RUN_PRE_COMMIT_HOOKS=$RUN_PRE_COMMIT_HOOKS" >> $GITHUB_ENV
+          echo "RUN_TESTS=$RUN_TESTS" >> $GITHUB_ENV
+          echo "DEPLOY_TO_DOCKER_HUB=$DEPLOY_TO_DOCKER_HUB" >> $GITHUB_ENV
+          echo "DEPLOY_TO_ECR=$DEPLOY_TO_ECR" >> $GITHUB_ENV
+
+      - name: Use config variables
+        run: |
+          echo "Run pre-commit-hooks: $RUN_PRE_COMMIT_HOOKS"
+          echo "Run tests: $RUN_TESTS"
+          echo "Deploy to docker hub: $DEPLOY_TO_DOCKER_HUB"
+          echo "Deploy ro ECR: $DEPLOY_TO_ECR"
+
+      - id: set_output_variables
+        run: |
+          echo "pre_commit=$RUN_PRE_COMMIT_HOOKS" >> $GITHUB_OUTPUT
+          echo "tests=$RUN_TESTS" >> $GITHUB_OUTPUT
+          echo "ecr=$DEPLOY_TO_ECR" >> $GITHUB_OUTPUT
+          echo "docker_hub=$DEPLOY_TO_DOCKER_HUB" >> $GITHUB_OUTPUT
+
   setup:
+    needs: get-config
     runs-on: ubuntu-latest
     outputs:
       cache-key: ${{ steps.cache-key.outputs.key }}

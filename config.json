@@ -1,0 +1,6 @@
+{
+  "run_pre_commit_hooks": "true",
+  "run_tests": "true",
+  "deploy_to_ecr": "true",
+  "deploy_to_docker_hub": "false"
+}
