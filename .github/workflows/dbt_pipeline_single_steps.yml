@@ -153,7 +153,7 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
-  
+
       - name: Set up Python environment
         run: |
             sudo apt-get update
@@ -162,14 +162,14 @@ jobs:
             source venv/bin/activate
             pip install --upgrade pip
             pip install dbt-snowflake
-  
+
       - name: Set up dbt profile
         run: |
             mkdir -p /home/runner/.dbt
             echo "$DBT_PROFILE_CONTENTS" > /home/runner/.dbt/profiles.yml
         env:
             DBT_PROFILE_CONTENTS: ${{ secrets.DBT_PROFILE_CONTENTS }}
-  
+
       - name: Run dbt models
         run: |
             source venv/bin/activate
@@ -179,4 +179,3 @@ jobs:
         env:
             SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
             SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-            
