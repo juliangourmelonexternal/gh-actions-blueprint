@@ -32,7 +32,14 @@ jobs:
           echo "DEPLOY=$DEPLOY" >> $GITHUB_ENV
           echo "TESTS=$TESTS" >> $GITHUB_ENV
           echo "PRE_COMMIT_HOOKS=$PRE_COMMIT_HOOKS" >> $GITHUB_ENV
+          echo "Hooks to be run: $PRE_COMMIT_HOOKS"
   
+      - name: Print variables
+        run: |
+          echo "Should dbt run be executed: $DEPLOY"
+          echo "Should tests be run: $TESTS"
+          echo "Hooks to be run: $PRE_COMMIT_HOOKS"  
+
       - name: Set output variables
         run: |
           echo "deploy=$DEPLOY" >> $GITHUB_OUTPUT
@@ -80,6 +87,9 @@ jobs:
         with:
           path: venv
           key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: debug hooks
+        run: echo "${{ needs.get-config.outputs.pre_commit_hooks }}"
 
       - name: Run pre-commit checks
         run: |
