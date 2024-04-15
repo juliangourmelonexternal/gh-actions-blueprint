@@ -8,19 +8,19 @@ on:
 jobs:
   get-config:
     runs-on: ubuntu-latest
-  
+
     outputs:
       deploy: ${{ steps.set_output_variables.outputs.deploy }}
       tests: ${{ steps.set_output_variables.outputs.tests }}
       pre_commit_hooks: ${{ steps.set_output_variables.outputs.pre_commit_hooks }}
-  
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-  
+
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
-  
+
       - name: Read config file
         run: |
           CONFIG_PATH='./config.json'
@@ -28,23 +28,23 @@ jobs:
           DEPLOY=$(jq -r '.deploy' $CONFIG_PATH)
           TESTS=$(jq -r '.tests' $CONFIG_PATH)
           PRE_COMMIT_HOOKS=$(jq -r '."pre-commit".hooks | join(",")' $CONFIG_PATH)
-          
+
           echo "DEPLOY=$DEPLOY" >> $GITHUB_ENV
           echo "TESTS=$TESTS" >> $GITHUB_ENV
           echo "PRE_COMMIT_HOOKS=$PRE_COMMIT_HOOKS" >> $GITHUB_ENV
-  
+
       - name: Print variables
         run: |
           echo "Should dbt run be executed: $DEPLOY"
           echo "Should tests be run: $TESTS"
-          echo "Hooks to be run: $PRE_COMMIT_HOOKS"  
+          echo "Hooks to be run: $PRE_COMMIT_HOOKS"
 
       - name: Set output variables
         run: |
           echo "deploy=$DEPLOY" >> $GITHUB_OUTPUT
           echo "tests=$TESTS" >> $GITHUB_OUTPUT
           echo "pre_commit_hooks=$PRE_COMMIT_HOOKS" >> $GITHUB_OUTPUT
-        
+
 
   setup:
     needs: get-config
