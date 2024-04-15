@@ -45,6 +45,12 @@ jobs:
           echo "tests=$TESTS" >> $GITHUB_OUTPUT
           echo "pre_commit_hooks=$PRE_COMMIT_HOOKS" >> $GITHUB_OUTPUT
 
+      - name: Final Output Check
+        run: |
+          echo "Final check for DEPLOY: $DEPLOY"
+          echo "Final check for TESTS: $TESTS"
+          echo "Final check for PRE_COMMIT_HOOKS: $PRE_COMMIT_HOOKS"
+
 
   setup:
     needs: get-config
