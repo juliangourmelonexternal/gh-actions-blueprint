@@ -121,14 +121,11 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2
 
-      - name: Set up Python environment
-        run: |
-            sudo apt-get update
-            sudo apt-get install -y python3-pip python3-venv
-            python3 -m venv venv
-            source venv/bin/activate
-            pip install --upgrade pip
-            pip install dbt-snowflake
+      - name: Cache venv
+        uses: actions/cache@v2
+        with:
+          path: venv
+          key: ${{ needs.setup.outputs.cache-key }}
 
       - name: Set up dbt profile
         run: |
@@ -154,14 +151,11 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2
 
-      - name: Set up Python environment
-        run: |
-            sudo apt-get update
-            sudo apt-get install -y python3-pip python3-venv
-            python3 -m venv venv
-            source venv/bin/activate
-            pip install --upgrade pip
-            pip install dbt-snowflake
+      - name: Cache venv
+        uses: actions/cache@v2
+        with:
+          path: venv
+          key: ${{ needs.setup.outputs.cache-key }}
 
       - name: Set up dbt profile
         run: |
