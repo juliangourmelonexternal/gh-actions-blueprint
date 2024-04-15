@@ -13,6 +13,7 @@ jobs:
       deploy: ${{ steps.set_output_variables.outputs.deploy }}
       tests: ${{ steps.set_output_variables.outputs.tests }}
       pre_commit_hooks: ${{ steps.set_output_variables.outputs.pre_commit_hooks }}
+      pre_commit_all_files: ${{ steps.set_output_variables.outputs.pre_commit_all_files }}
 
     steps:
       - name: Checkout repository
@@ -28,16 +29,19 @@ jobs:
           DEPLOY=$(jq -r '.deploy' $CONFIG_PATH)
           TESTS=$(jq -r '.tests' $CONFIG_PATH)
           PRE_COMMIT_HOOKS=$(jq -r '."pre-commit".hooks | join(",")' $CONFIG_PATH)
+          PRE_COMMIT_ALL_FILES=$(jq -r '."pre-commit".hooks' $CONFIG_PATH)
 
           echo "DEPLOY=$DEPLOY" >> $GITHUB_ENV
           echo "TESTS=$TESTS" >> $GITHUB_ENV
           echo "PRE_COMMIT_HOOKS=$PRE_COMMIT_HOOKS" >> $GITHUB_ENV
+          echo "PRE_COMMIT_ALL_FILES=$PRE_COMMIT_ALL_FILES" >> $GITHUB_ENV
 
       - name: Print variables
         run: |
           echo "Should dbt run be executed: $DEPLOY"
           echo "Should tests be run: $TESTS"
           echo "Hooks to be run: $PRE_COMMIT_HOOKS"
+          echo "Should hooks run over all files: $PRE_COMMIT_ALL_FILES"
 
       - name: Set output variables
         id: set_output_variables
@@ -45,12 +49,7 @@ jobs:
           echo "deploy=$DEPLOY" >> $GITHUB_OUTPUT
           echo "tests=$TESTS" >> $GITHUB_OUTPUT
           echo "pre_commit_hooks=$PRE_COMMIT_HOOKS" >> $GITHUB_OUTPUT
-
-      - name: Final Output Check
-        run: |
-          echo "Final check for DEPLOY: $DEPLOY"
-          echo "Final check for TESTS: $TESTS"
-          echo "Final check for PRE_COMMIT_HOOKS: $PRE_COMMIT_HOOKS"
+          echo "pre_commit_all_files=$PRE_COMMIT_ALL_FILES" >> $GITHUB_OUTPUT
 
 
   setup:
@@ -83,6 +82,7 @@ jobs:
           echo "${{ needs.get-config.outputs.pre_commit_hooks }}"
           echo "${{ needs.get-config.outputs.tests }}"
           echo "${{ needs.get-config.outputs.deploy }}"
+          echo "${{ needs.get-config.outputs.pre_commit_all_files }}"
 
       - name: Generate cache key
         id: cache-key
@@ -106,6 +106,7 @@ jobs:
           echo "${{ needs.get-config.outputs.pre_commit_hooks }}"
           echo "${{ needs.get-config.outputs.tests }}"
           echo "${{ needs.get-config.outputs.deploy }}"
+          echo "${{ needs.get-config.outputs.pre_commit_all_files }}"
 
       - name: Run pre-commit checks
         run: |
