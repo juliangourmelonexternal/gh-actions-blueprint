@@ -112,7 +112,7 @@ jobs:
           source venv/bin/activate
           IFS=',' read -ra HOOKS <<< "${{ needs.get-config.outputs.pre_commit_hooks }}"
           for hook in "${HOOKS[@]}"; do
-            pre-commit run $hook
+            pre-commit run $hook --all-files
           done
 
   setup-dbt-profile:
