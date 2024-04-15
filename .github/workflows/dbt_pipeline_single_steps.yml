@@ -40,6 +40,7 @@ jobs:
           echo "Hooks to be run: $PRE_COMMIT_HOOKS"
 
       - name: Set output variables
+        id: set_output_variables
         run: |
           echo "deploy=$DEPLOY" >> $GITHUB_OUTPUT
           echo "tests=$TESTS" >> $GITHUB_OUTPUT
