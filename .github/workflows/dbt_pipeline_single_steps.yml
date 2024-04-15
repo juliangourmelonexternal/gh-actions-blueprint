@@ -35,12 +35,12 @@ jobs:
 
       - name: Use config variables
         run: |
-          echo "Run pre-commit-hooks: $DEPLOY"
-          echo "Run tests: $TESTS"
+          echo "Deploy to Snowflake: $DEPLOY"
+          echo "Run dbt tests: $TESTS"
 
       - id: set_output_variables
         run: |
-          echo "pre_commit=$DEPLOY" >> $GITHUB_OUTPUT
+          echo "deploy=$DEPLOY" >> $GITHUB_OUTPUT
           echo "tests=$TESTS" >> $GITHUB_OUTPUT
 
   setup:
