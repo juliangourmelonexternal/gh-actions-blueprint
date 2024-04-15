@@ -1,4 +1,13 @@
 {
   "deploy": "true",
-  "tests": "true"
+  "tests": "true",
+  "pre-commit": {
+    "hooks": {
+      "trailing-whitespace": "true",
+      "end-of-file-fixer": "true",
+      "check-yaml": "true",
+      "check-merge-conflict": "true"
+    },
+    "all-files": "true"
+  }
 }
