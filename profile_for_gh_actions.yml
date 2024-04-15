@@ -8,6 +8,6 @@ dbt_project:
       role: JULIANISTDERBESTE
       database: DBT_Julian_ist_der_Beste
       warehouse: ARETO_TRIAL_XS
-      schema: TEST_SCHEMA_2
+      schema: TEST_SCHEMA_3
       threads: 2
   target: dev
