@@ -2,12 +2,12 @@
   "deploy": "true",
   "tests": "true",
   "pre-commit": {
-    "hooks": {
-      "trailing-whitespace": "true",
-      "end-of-file-fixer": "true",
-      "check-yaml": "true",
-      "check-merge-conflict": "true"
-    },
+    "hooks": [
+      "trailing-whitespace",
+      "end-of-file-fixer",
+      "check-yaml",
+      "check-merge-conflict"
+    ],
     "all-files": "true"
   }
 }

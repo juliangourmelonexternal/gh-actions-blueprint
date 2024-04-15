@@ -12,21 +12,14 @@ jobs:
     outputs:
       deploy: ${{ steps.set_output_variables.outputs.deploy }}
       tests: ${{ steps.set_output_variables.outputs.tests }}
-      pre_commit_all_files: ${{ steps.set_output_variables.outputs.pre_commit_all_files }}
-      pre_commit_trailing_whitespace: ${{ steps.set_output_variables.outputs.pre_commit_trailing_whitespace }}
-      pre_commit_end_of_file_fixer: ${{ steps.set_output_variables.outputs.pre_commit_end_of_file_fixer }}
-      pre_commit_check_yaml: ${{ steps.set_output_variables.outputs.pre_commit_check_yaml }}
-      pre_commit_check_merge_conflict: ${{ steps.set_output_variables.outputs.pre_commit_check_merge_conflict }}
+      pre_commit_hooks: ${{ steps.set_output_variables.outputs.pre_commit_hooks }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Show current location
-        run: ls
-
       - name: Install jq
-        run: sudo apt-get install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Read config file
         run: |
@@ -34,39 +27,18 @@ jobs:
           echo "Reading config file $CONFIG_PATH"
           DEPLOY=$(jq -r '.deploy' $CONFIG_PATH)
           TESTS=$(jq -r '.tests' $CONFIG_PATH)
-          PRE_COMMIT_ALL_FILES=$(jq -r '.pre-commit."all-files"' $CONFIG_PATH)
-          PRE_COMMIT_TRAILING_WHITESPACE=$(jq -r '.pre-commit.hooks."trailing-whitespace"' $CONFIG_PATH)
-          PRE_COMMIT_EOF_FIXER=$(jq -r '.pre-commit.hooks."end-of-file-fixer"' $CONFIG_PATH)
-          PRE_COMMIT_CHECK_YAML=$(jq -r '.pre-commit.hooks."check-yaml"' $CONFIG_PATH)
-          PRE_COMMIT_CHECK_MERGE_CONFLICT=$(jq -r '.pre-commit.hooks."check-merge-conflict"' $CONFIG_PATH)
+          PRE_COMMIT_HOOKS=$(jq -r '.pre-commit.hooks | join(",")' $CONFIG_PATH)
 
           echo "DEPLOY=$DEPLOY" >> $GITHUB_ENV
           echo "TESTS=$TESTS" >> $GITHUB_ENV
-          echo "PRE_COMMIT_ALL_FILES=$PRE_COMMIT_ALL_FILES" >> $GITHUB_ENV
-          echo "PRE_COMMIT_TRAILING_WHITESPACE=$PRE_COMMIT_TRAILING_WHITESPACE" >> $GITHUB_ENV
-          echo "PRE_COMMIT_EOF_FIXER=$PRE_COMMIT_EOF_FIXER" >> $GITHUB_ENV
-          echo "PRE_COMMIT_CHECK_YAML=$PRE_COMMIT_CHECK_YAML" >> $GITHUB_ENV
-          echo "PRE_COMMIT_CHECK_MERGE_CONFLICT=$PRE_COMMIT_CHECK_MERGE_CONFLICT" >> $GITHUB_ENV
+          echo "PRE_COMMIT_HOOKS=$PRE_COMMIT_HOOKS" >> $GITHUB_ENV
 
-      - name: Use config variables
-        run: |
-          echo "Deploy: $DEPLOY"
-          echo "Tests: $TESTS"
-          echo "Pre-commit all-files: $PRE_COMMIT_ALL_FILES"
-          echo "Pre-commit trailing whitespace: $PRE_COMMIT_TRAILING_WHITESPACE"
-          echo "Pre-commit EOF fixer: $PRE_COMMIT_EOF_FIXER"
-          echo "Pre-commit check YAML: $PRE_COMMIT_CHECK_YAML"
-          echo "Pre-commit check merge conflict: $PRE_COMMIT_CHECK_MERGE_CONFLICT"
-
-      - id: set_output_variables
+      - name: Set output variables
         run: |
           echo "deploy=$DEPLOY" >> $GITHUB_OUTPUT
           echo "tests=$TESTS" >> $GITHUB_OUTPUT
-          echo "pre_commit_all_files=$PRE_COMMIT_ALL_FILES" >> $GITHUB_OUTPUT
-          echo "pre_commit_trailing_whitespace=$PRE_COMMIT_TRAILING_WHITESPACE" >> $GITHUB_OUTPUT
-          echo "pre_commit_end_of_file_fixer=$PRE_COMMIT_EOF_FIXER" >> $GITHUB_OUTPUT
-          echo "pre_commit_check_yaml=$PRE_COMMIT_CHECK_YAML" >> $GITHUB_OUTPUT
-          echo "pre_commit_check_merge_conflict=$PRE_COMMIT_CHECK_MERGE_CONFLICT" >> $GITHUB_OUTPUT
+          echo "pre_commit_hooks=$PRE_COMMIT_HOOKS" >> $GITHUB_OUTPUT
+
 
 
   setup:
@@ -99,7 +71,7 @@ jobs:
         run: echo "::set-output name=key::${{ runner.os }}-venv-${{ hashFiles('**/requirements.txt') }}"
 
   pre-commit-checks:
-    needs: setup
+    needs: [get-config, setup]
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
