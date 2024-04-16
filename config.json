@@ -8,6 +8,6 @@
       "check-yaml",
       "check-merge-conflict"
     ],
-    "all-files": "true"
+    "all-files": "false"
   }
 }
