@@ -112,7 +112,7 @@ jobs:
           fi
 
   setup-dbt-profile:
-    needs: pre-commit-checks
+    needs: [setup, pre-commit-checks]
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
