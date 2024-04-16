@@ -111,13 +111,18 @@ jobs:
             done
           fi
 
-
   setup-dbt-profile:
     needs: pre-commit-checks
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
+
+      - name: Cache venv
+        uses: actions/cache@v2
+        with:
+          path: venv
+          key: ${{ needs.setup.outputs.cache-key }}
 
       - name: Set up dbt profile
         run: |
@@ -139,13 +144,6 @@ jobs:
         with:
           path: venv
           key: ${{ needs.setup.outputs.cache-key }}
-
-      - name: Set up dbt profile
-        run: |
-            mkdir -p /home/runner/.dbt
-            echo "$DBT_PROFILE_CONTENTS" > /home/runner/.dbt/profiles.yml
-        env:
-            DBT_PROFILE_CONTENTS: ${{ secrets.DBT_PROFILE_CONTENTS }}
 
       - name: Run dbt tests
         run: |
