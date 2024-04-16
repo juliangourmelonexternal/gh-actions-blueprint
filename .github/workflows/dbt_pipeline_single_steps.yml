@@ -29,7 +29,7 @@ jobs:
           DEPLOY=$(jq -r '.deploy' $CONFIG_PATH)
           TESTS=$(jq -r '.tests' $CONFIG_PATH)
           PRE_COMMIT_HOOKS=$(jq -r '."pre-commit".hooks | join(",")' $CONFIG_PATH)
-          PRE_COMMIT_ALL_FILES=$(jq -r '."pre-commit".hooks' $CONFIG_PATH)
+          PRE_COMMIT_ALL_FILES=$(jq -r '."pre-commit".all-files' $CONFIG_PATH)
 
           echo "DEPLOY=$DEPLOY" >> $GITHUB_ENV
           echo "TESTS=$TESTS" >> $GITHUB_ENV
