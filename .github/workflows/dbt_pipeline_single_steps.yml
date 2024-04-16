@@ -77,13 +77,6 @@ jobs:
           pip install --upgrade pip
           pip install dbt-snowflake pre-commit
 
-      - name: debug output variables
-        run: |
-          echo "${{ needs.get-config.outputs.pre_commit_hooks }}"
-          echo "${{ needs.get-config.outputs.tests }}"
-          echo "${{ needs.get-config.outputs.deploy }}"
-          echo "${{ needs.get-config.outputs.pre_commit_all_files }}"
-
       - name: Generate cache key
         id: cache-key
         run: echo "::set-output name=key::${{ runner.os }}-venv-${{ hashFiles('**/requirements.txt') }}"
@@ -101,18 +94,10 @@ jobs:
           path: venv
           key: ${{ needs.setup.outputs.cache-key }}
 
-      - name: debug output variables
-        run: |
-          echo "${{ needs.get-config.outputs.pre_commit_hooks }}"
-          echo "${{ needs.get-config.outputs.tests }}"
-          echo "${{ needs.get-config.outputs.deploy }}"
-          echo "${{ needs.get-config.outputs.pre_commit_all_files }}"
-
       - name: Run pre-commit checks
         run: |
           source venv/bin/activate
           read -r ALL_FILES_FLAG <<< "${{ needs.get-config.outputs.pre_commit_all_files }}"
-          echo $ALL_FILES_FLAG
           IFS=',' read -ra HOOKS <<< "${{ needs.get-config.outputs.pre_commit_hooks }}"
           if [ "$ALL_FILES_FLAG" = "true" ]; then
             echo "pre-commit hooks are running on all files."
