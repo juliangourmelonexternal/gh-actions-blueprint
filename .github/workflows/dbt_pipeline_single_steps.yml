@@ -117,7 +117,7 @@ jobs:
           if [ $ALL_FILES_FLAG ]; then
             echo $ALL_FILES_FLAG
           else
-            echo $ALL_FILES_FLAG 
+            echo $ALL_FILES_FLAG
           fi
           for hook in "${HOOKS[@]}"; do
             pre-commit run $hook --all-files
