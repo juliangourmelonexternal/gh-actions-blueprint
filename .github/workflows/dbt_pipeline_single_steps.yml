@@ -115,13 +115,17 @@ jobs:
           echo $ALL_FILES_FLAG
           IFS=',' read -ra HOOKS <<< "${{ needs.get-config.outputs.pre_commit_hooks }}"
           if [ $ALL_FILES_FLAG ]; then
-            echo $ALL_FILES_FLAG
+            for hook in "${HOOKS[@]}"; do
+              pre-commit run $hook --all-files
+              echo $ALL_FILES_FLAG
+            done
           else
-            echo $ALL_FILES_FLAG
+            for hook in "${HOOKS[@]}"; do
+              pre-commit run $hook
+              echo $ALL_FILES_FLAG
+            done
           fi
-          for hook in "${HOOKS[@]}"; do
-            pre-commit run $hook --all-files
-          done
+
 
   setup-dbt-profile:
     needs: pre-commit-checks
