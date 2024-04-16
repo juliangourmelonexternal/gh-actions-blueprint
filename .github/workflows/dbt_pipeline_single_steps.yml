@@ -114,6 +114,11 @@ jobs:
           read -r ALL_FILES_FLAG <<< "${{ needs.get-config.outputs.pre_commit_all_files }}"
           echo $ALL_FILES_FLAG
           IFS=',' read -ra HOOKS <<< "${{ needs.get-config.outputs.pre_commit_hooks }}"
+          if [ $ALL_FILES_FLAG ]; then
+            echo $ALL_FILES_FLAG
+          else
+            echo $ALL_FILES_FLAG 
+          fi
           for hook in "${HOOKS[@]}"; do
             pre-commit run $hook --all-files
           done
