@@ -181,12 +181,11 @@ jobs:
           path: venv
           key: ${{ needs.setup.outputs.cache-key }}
 
-      - name: Set up dbt profile
-        run: |
-            mkdir -p /home/runner/.dbt
-            echo "$DBT_PROFILE_CONTENTS" > /home/runner/.dbt/profiles.yml
-        env:
-            DBT_PROFILE_CONTENTS: ${{ secrets.DBT_PROFILE_CONTENTS }}
+      - name: Retrieve dbt profile
+        uses: actions/download-artifact@v2
+        with:
+          name: dbt-profile
+          path: /home/runner/.dbt
 
       - name: Run dbt models
         run: |
