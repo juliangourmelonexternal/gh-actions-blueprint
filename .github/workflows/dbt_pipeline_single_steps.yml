@@ -131,6 +131,12 @@ jobs:
         env:
           DBT_PROFILE_CONTENTS: ${{ secrets.DBT_PROFILE_CONTENTS }}
 
+      - name: Save dbt profile as an artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dbt-profile
+          path: /home/runner/.dbt
+
   dbt-tests:
     needs: [get-config, setup, setup-dbt-profile]
     if: needs.get-config.outputs.tests == 'true'
@@ -144,6 +150,12 @@ jobs:
         with:
           path: venv
           key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: Retrieve dbt profile
+        uses: actions/download-artifact@v2
+        with:
+          name: dbt-profile
+          path: /home/runner/.dbt
 
       - name: Run dbt tests
         run: |
