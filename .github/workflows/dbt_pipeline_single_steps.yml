@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feature-dbt-docs
 
 jobs:
   get-config:
@@ -14,6 +15,7 @@ jobs:
       tests: ${{ steps.set_output_variables.outputs.tests }}
       pre_commit_hooks: ${{ steps.set_output_variables.outputs.pre_commit_hooks }}
       pre_commit_all_files: ${{ steps.set_output_variables.outputs.pre_commit_all_files }}
+      docs: ${{ steps.set_output_variables.outputs.docs }}
 
     steps:
       - name: Checkout repository
@@ -26,15 +28,18 @@ jobs:
         run: |
           CONFIG_PATH='./config.json'
           echo "Reading config file $CONFIG_PATH"
+
           DEPLOY=$(jq -r '.deploy' $CONFIG_PATH)
           TESTS=$(jq -r '.tests' $CONFIG_PATH)
           PRE_COMMIT_HOOKS=$(jq -r '."pre-commit".hooks | join(",")' $CONFIG_PATH)
           PRE_COMMIT_ALL_FILES=$(jq -r '."pre-commit"."all-files"' $CONFIG_PATH)
+          DOCS=$(jq -r '.docs' $CONFIG_PATH)
 
           echo "DEPLOY=$DEPLOY" >> $GITHUB_ENV
           echo "TESTS=$TESTS" >> $GITHUB_ENV
           echo "PRE_COMMIT_HOOKS=$PRE_COMMIT_HOOKS" >> $GITHUB_ENV
           echo "PRE_COMMIT_ALL_FILES=$PRE_COMMIT_ALL_FILES" >> $GITHUB_ENV
+          echo "DOCS=$DOCS" >> $GITHUB_ENV
 
       - name: Print variables
         run: |
@@ -42,6 +47,7 @@ jobs:
           echo "Should tests be run: $TESTS"
           echo "Hooks to be run: $PRE_COMMIT_HOOKS"
           echo "Should hooks run over all files: $PRE_COMMIT_ALL_FILES"
+          echo "Should dbt docs be build and served: $DOCS"
 
       - name: Set output variables
         id: set_output_variables
@@ -50,6 +56,7 @@ jobs:
           echo "tests=$TESTS" >> $GITHUB_OUTPUT
           echo "pre_commit_hooks=$PRE_COMMIT_HOOKS" >> $GITHUB_OUTPUT
           echo "pre_commit_all_files=$PRE_COMMIT_ALL_FILES" >> $GITHUB_OUTPUT
+          echo "docs=$DOCS" >> $GITHUB_OUTPUT
 
 
   setup:
@@ -196,3 +203,49 @@ jobs:
         env:
             SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
             SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+
+  dbt-docs:
+    needs: [get-config, setup, setup-dbt-profile, dbt-build]
+    if: needs.get-config.outputs.docs == 'true'
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Cache venv
+        uses: actions/cache@v2
+        with:
+          path: venv
+          key: ${{ needs.setup.outputs.cache-key }}
+
+      - name: Retrieve dbt profile
+        uses: actions/download-artifact@v2
+        with:
+          name: dbt-profile
+          path: /home/runner/.dbt
+
+      - name: Generate dbt docs
+        run: |
+          source venv/bin/activate
+          cd ./dbt_project
+          dbt deps
+          dbt docs generate
+        env:
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dbt_project/target
+          publish_branch: gh-pages
+          keep_files: true
+
+      - name: Print GitHub Pages URL
+        run: |
+          echo "Visit your dbt docs at: https://$GITHUB_REPOSITORY_OWNER.github.io/${GITHUB_REPOSITORY#*/}/"
+        env:
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}

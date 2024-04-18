@@ -9,5 +9,6 @@
       "check-merge-conflict"
     ],
     "all-files": "false"
-  }
+  },
+  "docs": "true"
 }
