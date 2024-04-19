@@ -3,4 +3,4 @@ profile_for_gh_actions.txt
 /logs/dbt.log
 notes_for_review.txt
 conda_notes.txt
-/mycondaenv
+/dbtcondaenv
