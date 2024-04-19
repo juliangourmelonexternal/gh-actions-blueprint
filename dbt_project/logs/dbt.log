@@ -2592,7 +2592,7 @@ CALL snowpark_demo__dbt_sp();
 [0m13:12:44.768003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dc4d6aec-0569-4d49-b380-9caaf108bd30', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000205102DA180>]}
 [0m13:12:44.768003 [info ] [MainThread]: Found 5 models, 7 tests, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
 [0m13:12:44.771016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dc4d6aec-0569-4d49-b380-9caaf108bd30', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050E4FAA80>]}
-[0m13:12:44.771016 [info ] [MainThread]: 
+[0m13:12:44.771016 [info ] [MainThread]:
 [0m13:12:44.776599 [debug] [MainThread]: Acquiring new snowflake connection 'master'
 [0m13:12:44.778017 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste'
 [0m13:12:44.807833 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste"
@@ -2611,7 +2611,7 @@ show terse objects in DBT_Julian_ist_der_Beste.TEST_SCHEMA_2 limit 10000
 [0m13:12:54.983325 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: Close
 [0m13:12:55.092850 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dc4d6aec-0569-4d49-b380-9caaf108bd30', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000205101BDA90>]}
 [0m13:12:55.093858 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
-[0m13:12:55.094757 [info ] [MainThread]: 
+[0m13:12:55.094757 [info ] [MainThread]:
 [0m13:12:55.102527 [debug] [Thread-1 (]: Began running node model.dbt_project.book_loans
 [0m13:12:55.102527 [debug] [Thread-2 (]: Began running node model.dbt_project.my_first_dbt_model
 [0m13:12:55.103910 [info ] [Thread-1 (]: 1 of 5 START sql table model TEST_SCHEMA_2.book_loans .......................... [RUN]
@@ -2706,7 +2706,7 @@ from source_data
 [0m13:12:56.907958 [debug] [Thread-2 (]: Using snowflake connection "model.dbt_project.my_second_dbt_model"
 [0m13:12:56.908967 [debug] [Thread-2 (]: On model.dbt_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.7.11", "profile_name": "dbt_project", "target_name": "dev", "node_id": "model.dbt_project.my_second_dbt_model"} */
 create or replace   view DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_dbt_model
-  
+
    as (
     -- Use the `ref` function to select from other models
 
@@ -2744,26 +2744,26 @@ import sys
 sys._xoptions['snowflake_partner_attribution'].append("dbtLabs_dbtPython")
 
 
-  
-    
-from snowflake.snowpark.functions import udf
-
-def model(dbt, session):
-    # Must be either table or incremental (view is not currently supported)
-    dbt.config(materialized = "table")
-
-    # User defined function
-    @udf
-    def add_one(x: int) -> int:
-        x = 0 if not x else x
-        return x + 1
-
-    # DataFrame representing an upstream model
-    df = dbt.ref("book_loans")
-
-    # Add a new column containing the id incremented by one
-    df = df.withColumn("BOOK_ID_PLUS_ONE", add_one(df["BOOK_ID"]))
-
+
+
+from snowflake.snowpark.functions import udf
+
+def model(dbt, session):
+    # Must be either table or incremental (view is not currently supported)
+    dbt.config(materialized = "table")
+
+    # User defined function
+    @udf
+    def add_one(x: int) -> int:
+        x = 0 if not x else x
+        return x + 1
+
+    # DataFrame representing an upstream model
+    df = dbt.ref("book_loans")
+
+    # Add a new column containing the id incremented by one
+    df = df.withColumn("BOOK_ID_PLUS_ONE", add_one(df["BOOK_ID"]))
+
     return df
 
 
@@ -2804,7 +2804,7 @@ class this:
     database = "DBT_Julian_ist_der_Beste"
     schema = "TEST_SCHEMA_2"
     identifier = "my_second_python_model"
-    
+
     def __repr__(self):
         return 'DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_python_model'
 
@@ -2843,7 +2843,7 @@ def materialize(session, df, target_relation):
           session.use_schema(target_relation.schema)
           # session.write_pandas does not have overwrite function
           df = session.createDataFrame(df)
-    
+
     df.write.mode("overwrite").save_as_table('DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.my_second_python_model', table_type='transient')
 
 def main(session):
@@ -2852,7 +2852,7 @@ def main(session):
     materialize(session, df, dbt.this)
     return "OK"
 
-  
+
 $$
 CALL my_second_python_model__dbt_sp();
 [0m13:12:57.127830 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
@@ -2888,15 +2888,15 @@ import sys
 sys._xoptions['snowflake_partner_attribution'].append("dbtLabs_dbtPython")
 
 
-  
-    
-def model(dbt, session):
-    # Must be either table or incremental (view is not currently supported)
-    dbt.config(materialized = "table")
-
-    # DataFrame representing an upstream model
-    df = dbt.ref("book_loans")
-
+
+
+def model(dbt, session):
+    # Must be either table or incremental (view is not currently supported)
+    dbt.config(materialized = "table")
+
+    # DataFrame representing an upstream model
+    df = dbt.ref("book_loans")
+
     return df
 
 
@@ -2937,7 +2937,7 @@ class this:
     database = "DBT_Julian_ist_der_Beste"
     schema = "TEST_SCHEMA_2"
     identifier = "snowpark_demo"
-    
+
     def __repr__(self):
         return 'DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.snowpark_demo'
 
@@ -2976,7 +2976,7 @@ def materialize(session, df, target_relation):
           session.use_schema(target_relation.schema)
           # session.write_pandas does not have overwrite function
           df = session.createDataFrame(df)
-    
+
     df.write.mode("overwrite").save_as_table('DBT_Julian_ist_der_Beste.TEST_SCHEMA_2.snowpark_demo', table_type='transient')
 
 def main(session):
@@ -2985,7 +2985,7 @@ def main(session):
     materialize(session, df, dbt.this)
     return "OK"
 
-  
+
 $$
 CALL snowpark_demo__dbt_sp();
 [0m13:12:58.277545 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
@@ -3006,12 +3006,12 @@ CALL snowpark_demo__dbt_sp();
 [0m13:13:01.433384 [debug] [MainThread]: Connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2' was properly closed.
 [0m13:13:01.433384 [debug] [MainThread]: Connection 'model.dbt_project.my_second_python_model' was properly closed.
 [0m13:13:01.434387 [debug] [MainThread]: Connection 'model.dbt_project.snowpark_demo' was properly closed.
-[0m13:13:01.434387 [info ] [MainThread]: 
+[0m13:13:01.434387 [info ] [MainThread]:
 [0m13:13:01.437064 [info ] [MainThread]: Finished running 4 table models, 1 view model in 0 hours 0 minutes and 16.66 seconds (16.66s).
 [0m13:13:01.439063 [debug] [MainThread]: Command end result
-[0m13:13:01.453729 [info ] [MainThread]: 
+[0m13:13:01.453729 [info ] [MainThread]:
 [0m13:13:01.457618 [info ] [MainThread]: [32mCompleted successfully[0m
-[0m13:13:01.458700 [info ] [MainThread]: 
+[0m13:13:01.458700 [info ] [MainThread]:
 [0m13:13:01.459831 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
 [0m13:13:01.461383 [debug] [MainThread]: Command `dbt run` succeeded at 13:13:01.461383 after 18.92 seconds
 [0m13:13:01.462382 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050E9A1DF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050F3D6CF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002051011FC50>]}
@@ -3032,7 +3032,7 @@ CALL snowpark_demo__dbt_sp();
 [0m13:13:29.445702 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3dcf2b4-104e-44eb-9ba4-9dacee21f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000156025F26C0>]}
 [0m13:13:29.446710 [info ] [MainThread]: Found 5 models, 7 tests, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
 [0m13:13:29.447704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3dcf2b4-104e-44eb-9ba4-9dacee21f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000156025F2330>]}
-[0m13:13:29.450828 [info ] [MainThread]: 
+[0m13:13:29.450828 [info ] [MainThread]:
 [0m13:13:29.451749 [debug] [MainThread]: Acquiring new snowflake connection 'master'
 [0m13:13:29.454793 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2'
 [0m13:13:29.479990 [debug] [ThreadPool]: Using snowflake connection "list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2"
@@ -3043,7 +3043,7 @@ show terse objects in DBT_Julian_ist_der_Beste.TEST_SCHEMA_2 limit 10000
 [0m13:13:30.406546 [debug] [ThreadPool]: On list_DBT_Julian_ist_der_Beste_TEST_SCHEMA_2: Close
 [0m13:13:30.512626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3dcf2b4-104e-44eb-9ba4-9dacee21f783', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001560251BF20>]}
 [0m13:13:30.513602 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
-[0m13:13:30.514754 [info ] [MainThread]: 
+[0m13:13:30.514754 [info ] [MainThread]:
 [0m13:13:30.521363 [debug] [Thread-1 (]: Began running node model.dbt_project.book_loans
 [0m13:13:30.521363 [debug] [Thread-2 (]: Began running node model.dbt_project.my_first_dbt_model
 [0m13:13:30.522357 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.dbt_project.book_loans'
@@ -3189,22 +3189,22 @@ with tables as (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('book_loans')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('my_second_python_model')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('snowpark_demo')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('my_first_dbt_model')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('my_second_dbt_model')
@@ -3227,22 +3227,22 @@ with tables as (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('book_loans')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('my_second_python_model')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('snowpark_demo')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('my_first_dbt_model')
                 )
-             or 
+             or
                 (
                     upper("table_schema") = upper('TEST_SCHEMA_2')
                     and upper("table_name") = upper('my_second_dbt_model')
